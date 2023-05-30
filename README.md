@@ -8,7 +8,7 @@ To the best of our knowledge, there is no official benchmark on Indonesian sente
 
 ### Machine Translated STS-B
 
-We believe that a synthetic baseline is better than no baseline. Therefore, we followed approached done in the Thai Sentence Vector Benchmark project and translated the [STS-B](https://github.com/facebookresearch/SentEval) test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set.
+We believe that a synthetic baseline is better than no baseline. Therefore, we followed approached done in the Thai Sentence Vector Benchmark project and translated the [STS-B](https://github.com/facebookresearch/SentEval) dev and test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set.
 
 > You can find the translated dataset on [🤗 HuggingFace Hub](https://huggingface.co/datasets/LazarusNLP/stsb_mt_id).
 
@@ -28,19 +28,19 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 
 ### Semantic Textual Similarity
 
-| Model                                                                                                                       | Spearman's Correlation (%) | Base Model                                                                        | Train Dataset                                                                 |
-| --------------------------------------------------------------------------------------------------------------------------- | :------------------------: | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |           70.13            | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)            | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |                            | [IndoRoBERTa Base](https://huggingface.co/flax-community/indonesian-roberta-base) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |           75.08            | [DistilBERT Base](https://huggingface.co/distilbert-base-multilingual-cased)      | Multi-Lingual model of Universal Sentence Encoder for 50 languages.           |
-| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |           83.83            | [XLM-RoBERTa Base](https://huggingface.co/xlm-roberta-base)                       | Multi-lingual model of paraphrase-mpnet-base-v2, extended to 50+ languages.   |
+| Model                                                                                                                       | Spearman's Correlation (%) | #params | Base Model                                                                                | Train Dataset                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------- | :------------------------: | :-----: | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |           70.13            |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)                    | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520)     |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |           61.26            |  125M   | [IndoRoBERTa Base](https://huggingface.co/flax-community/indonesian-roberta-base)         | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520)     |
+| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |           75.08            |  134M   | [DistilBERT Base Multilingual](https://huggingface.co/distilbert-base-multilingual-cased) | See [SBERT.net](https://www.sbert.net/docs/pretrained_models.html#model-overview) |
+| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |           83.83            |  125M   | [XLM-RoBERTa Base](https://huggingface.co/xlm-roberta-base)                               | See [SBERT.net](https://www.sbert.net/docs/pretrained_models.html#model-overview) |
 
 ### Emotion Classification (EmoT)
 
 | Model                                                                                                                       | Accuracy (%) | F1 Macro (%) |
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
 | [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |    55.90     |    56.34     |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |              |              |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |    50.45     |    50.40     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |    63.63     |    64.13     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |    63.18     |    63.78     |
 
@@ -49,7 +49,7 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 | Model                                                                                                                       | Accuracy (%) | F1 Macro (%) |
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
 | [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |     85.0     |    81.00     |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |              |              |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |     75.8     |    69.90     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     78.8     |    73.64     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     89.6     |    86.56     |
 
@@ -57,7 +57,7 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 
 ```bibtex
 @misc{Thai-Sentence-Vector-Benchmark-2022,
-  author = {Mr.P L},
+  author = {Limkonchotiwat, Peerat},
   title = {Thai-Sentence-Vector-Benchmark},
   year = {2022},
   publisher = {GitHub},
@@ -68,21 +68,21 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 
 ```bibtex
 @inproceedings{reimers-2019-sentence-bert,
-    title = "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
-    author = "Reimers, Nils and Gurevych, Iryna",
-    booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing",
-    month = "11",
-    year = "2019",
-    publisher = "Association for Computational Linguistics",
-    url = "https://arxiv.org/abs/1908.10084",
+  title = "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+  author = "Reimers, Nils and Gurevych, Iryna",
+  booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing",
+  month = "11",
+  year = "2019",
+  publisher = "Association for Computational Linguistics",
+  url = "https://arxiv.org/abs/1908.10084",
 }
 ```
 
 ```bibtex
 @inproceedings{gao2021simcse,
-   title={{SimCSE}: Simple Contrastive Learning of Sentence Embeddings},
-   author={Gao, Tianyu and Yao, Xingcheng and Chen, Danqi},
-   booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
-   year={2021}
+  title={{SimCSE}: Simple Contrastive Learning of Sentence Embeddings},
+  author={Gao, Tianyu and Yao, Xingcheng and Chen, Danqi},
+  booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
+  year={2021}
 }
 ```
