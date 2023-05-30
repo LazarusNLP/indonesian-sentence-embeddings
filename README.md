@@ -30,8 +30,8 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 
 | Model                                                                                                                       | Spearman's Correlation (%) | Base Model                                                                        | Train Dataset                                                                 |
 | --------------------------------------------------------------------------------------------------------------------------- | :------------------------: | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |           62.90            | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)            | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |           52.62            | [IndoRoBERTa Base](https://huggingface.co/flax-community/indonesian-roberta-base) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |           70.13            | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)            | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |                            | [IndoRoBERTa Base](https://huggingface.co/flax-community/indonesian-roberta-base) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |           75.08            | [DistilBERT Base](https://huggingface.co/distilbert-base-multilingual-cased)      | Multi-Lingual model of Universal Sentence Encoder for 50 languages.           |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |           83.83            | [XLM-RoBERTa Base](https://huggingface.co/xlm-roberta-base)                       | Multi-lingual model of paraphrase-mpnet-base-v2, extended to 50+ languages.   |
 
@@ -39,8 +39,8 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 
 | Model                                                                                                                       | Accuracy (%) | F1 Macro (%) |
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
-| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |    56.59     |    57.22     |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |    54.77     |    55.09     |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |    55.90     |    56.34     |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |              |              |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |    63.63     |    64.13     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |    63.18     |    63.78     |
 
@@ -48,8 +48,8 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 
 | Model                                                                                                                       | Accuracy (%) | F1 Macro (%) |
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
-| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |     83.4     |    78.25     |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |     80.0     |    76.67     |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |     85.0     |    81.00     |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |              |              |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     78.8     |    73.64     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     89.6     |    86.56     |
 
