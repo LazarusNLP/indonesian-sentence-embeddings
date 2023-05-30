@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import os
 
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer, InputExample, models, losses
@@ -15,8 +16,10 @@ class args:
     train_dataset_split = "train"
     train_text_column_1 = "text"
     train_text_column_2 = "text"
-    max_train_samples = 100000
+    max_train_samples = 1_000_000
     max_seq_length = 32
+    min_text_length = 20
+    max_text_length = 200
     # test
     test_dataset_name = "LazarusNLP/stsb_mt_id"
     test_dataset_split = "test"
@@ -35,11 +38,17 @@ class args:
 
 
 # Load datasets
-train_ds = load_dataset(
-    args.train_dataset_name,
-    split=f"{args.train_dataset_split}[:{args.max_train_samples}]",
-)
+train_ds = load_dataset(args.train_dataset_name, split=args.train_dataset_split)
 test_ds = load_dataset(args.test_dataset_name, split=args.test_dataset_split)
+
+# Preprocess train set
+num_proc = os.cpu_count()
+train_ds = train_ds.filter(
+    lambda x: args.min_text_length < len(x["text"]) < args.max_text_length,
+    num_proc=num_proc,
+)  # filter by length
+# select random train samples
+train_ds = train_ds.shuffle(seed=42).select(range(args.max_train_samples))
 
 # Intialize model with CLS pool
 word_embedding_model = models.Transformer(
