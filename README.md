@@ -32,6 +32,7 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 | --------------------------------------------------------------------------------------------------------------------------- | :------------------------: | :-----: | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |           70.13            |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)                    | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520)     |
 | [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |           61.26            |  125M   | [IndoRoBERTa Base](https://huggingface.co/flax-community/indonesian-roberta-base)         | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520)     |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |           80.47            |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)                    | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520)     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |           75.08            |  134M   | [DistilBERT Base Multilingual](https://huggingface.co/distilbert-base-multilingual-cased) | See [SBERT.net](https://www.sbert.net/docs/pretrained_models.html#model-overview) |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |           83.83            |  125M   | [XLM-RoBERTa Base](https://huggingface.co/xlm-roberta-base)                               | See [SBERT.net](https://www.sbert.net/docs/pretrained_models.html#model-overview) |
 
@@ -41,6 +42,7 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
 | [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |    55.90     |    56.34     |
 | [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |    50.45     |    50.40     |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |    56.81     |    56.94     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |    63.63     |    64.13     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |    63.18     |    63.78     |
 
@@ -50,6 +52,7 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
 | [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |     85.0     |    81.00     |
 | [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |     75.8     |    69.90     |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |     85.4     |    82.12     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     78.8     |    73.64     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     89.6     |    86.56     |
 
