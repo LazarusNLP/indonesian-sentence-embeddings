@@ -27,7 +27,7 @@ class args:
     max_text_length = 200
     # test
     test_dataset_name = "LazarusNLP/stsb_mt_id"
-    test_dataset_split = "test"
+    test_dataset_split = "validation"
     test_text_column_1 = "text_1"
     test_text_column_2 = "text_2"
     test_label_column = "correlation"
