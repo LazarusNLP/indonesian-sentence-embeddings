@@ -30,7 +30,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 
 ## Results
 
-### Semantic Textual Similarity
+### Machine Translated Indonesian Semantic Textual Similarity Benchmark (STSB-MT-ID)
 
 | Model                                                                                                                       | Spearman's Correlation (%) | #params | Base/Student Model                                                                        | Teacher Model                                                                                                               | Train Dataset                                                                  | Supervised |
 | --------------------------------------------------------------------------------------------------------------------------- | :------------------------: | :-----: | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | :--------: |
@@ -44,9 +44,9 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 
 | Model                                                                                                                       | Accuracy (%) | F1 Macro (%) |
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
-| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |    55.90     |    56.34     |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |    50.45     |    50.40     |
-| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |    56.81     |    56.94     |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |    55.45     |    55.78     |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |    50.45     |    50.75     |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |    57.04     |    57.06     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |    63.63     |    64.13     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |    63.18     |    63.78     |
 
@@ -54,8 +54,8 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 
 | Model                                                                                                                       | Accuracy (%) | F1 Macro (%) |
 | --------------------------------------------------------------------------------------------------------------------------- | :----------: | :----------: |
-| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |     85.0     |    81.00     |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |     75.8     |    69.90     |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |     85.6     |    81.50     |
+| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)                                        |     76.2     |    70.42     |
 | [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |     85.4     |    82.12     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     78.8     |    73.64     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     89.6     |    86.56     |
