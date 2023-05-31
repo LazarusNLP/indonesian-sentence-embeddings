@@ -93,3 +93,18 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
   year={2021}
 }
 ```
+
+```bibtex
+@inproceedings{limkonchotiwat-etal-2022-congen,
+  title = "{ConGen}: Unsupervised Control and Generalization Distillation For Sentence Representation",
+  author = "Limkonchotiwat, Peerat  and
+    Ponwitayarat, Wuttikorn  and
+    Lowphansirikul, Lalita and
+    Udomcharoenchaikit, Can  and
+    Chuangsuwanich, Ekapol  and
+    Nutanong, Sarana",
+  booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2022",
+  year = "2022",
+  publisher = "Association for Computational Linguistics",
+}
+```
