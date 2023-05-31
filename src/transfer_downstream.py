@@ -19,22 +19,23 @@ class args:
     label_column = "label"
 
 
-def preprocess(batch):
-    sentences = batch[args.text_column]
-    batch[args.text_column] = model.encode(sentences)
-    return batch
-
-
 model = SentenceTransformer(args.model_name)
 
 dataset = load_dataset(args.dataset_name, args.dataset_config)
-dataset = dataset.map(preprocess)
 train_ds, test_ds = dataset[args.train_split_name], dataset[args.test_split_name]
 
-classifier = LinearSVC()
-classifier.fit(train_ds[args.text_column], train_ds[args.label_column])
+# encode sentence embeddings
+train_text_encoded = model.encode(
+    train_ds[args.text_column], batch_size=128, show_progress_bar=True
+)
+test_text_encoded = model.encode(
+    test_ds[args.text_column], batch_size=128, show_progress_bar=True
+)
 
-predictions = classifier.predict(test_ds[args.text_column])
+classifier = LinearSVC()
+classifier.fit(train_text_encoded, train_ds[args.label_column])
+
+predictions = classifier.predict(test_text_encoded)
 
 acc = accuracy_score(test_ds[args.label_column], predictions)
 precision, recall, f1, _ = precision_recall_fscore_support(
