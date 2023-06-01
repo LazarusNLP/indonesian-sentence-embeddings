@@ -17,6 +17,7 @@ class args:
     test_split_name = "test"
     text_column = "tweet"
     label_column = "label"
+    encode_batch_size = 128
 
 
 model = SentenceTransformer(args.model_name)
@@ -26,10 +27,13 @@ train_ds, test_ds = dataset[args.train_split_name], dataset[args.test_split_name
 
 # encode sentence embeddings
 train_text_encoded = model.encode(
-    train_ds[args.text_column], batch_size=128, show_progress_bar=True
+    train_ds[args.text_column],
+    batch_size=args.encode_batch_size,
+    show_progress_bar=True,
 )
+
 test_text_encoded = model.encode(
-    test_ds[args.text_column], batch_size=128, show_progress_bar=True
+    test_ds[args.text_column], batch_size=args.encode_batch_size, show_progress_bar=True
 )
 
 classifier = LinearSVC()
