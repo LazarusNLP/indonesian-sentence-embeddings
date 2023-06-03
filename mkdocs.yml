@@ -26,6 +26,9 @@ theme:
     - navigation.sections
     - navigation.top
 
+plugins:
+  - social
+
 markdown_extensions:
   - attr_list
   - md_in_html
