@@ -2,3 +2,4 @@ git+https://github.com/UKPLab/sentence-transformers.git
 git+https://github.com/w11wo/ConGen.git
 datasets
 scikit-learn
+datargs
