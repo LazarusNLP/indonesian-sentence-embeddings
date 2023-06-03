@@ -20,6 +20,7 @@ class Args:
     train_positive_column: str = "positive"
     train_negative_column: str = "negative"
     max_seq_length: int = 32
+    max_train_samples: int = 1_000_000
     # test
     test_dataset_name: str = "LazarusNLP/stsb_mt_id"
     test_dataset_split: str = "validation"
@@ -46,6 +47,9 @@ def main(args: Args):
         split=args.train_dataset_split,
     )
     test_ds = load_dataset(args.test_dataset_name, split=args.test_dataset_split)
+
+    # select random train samples
+    train_ds = train_ds.shuffle(seed=42).select(range(args.max_train_samples))
 
     # Intialize model with mean pool
     word_embedding_model = models.Transformer(
