@@ -28,8 +28,8 @@ class Args:
     test_text_column_2: str = "text_2"
     test_label_column: str = "correlation"
     # training args
-    num_epochs: int = 10
-    train_batch_size: int = 64
+    num_epochs: int = 5
+    train_batch_size: int = 128
     test_batch_size: int = 32
     learning_rate: float = 2e-5
     warmup_ratio: float = 0.1
