@@ -13,6 +13,7 @@ class args:
     model_name = "indobenchmark/indobert-base-p1"
     # train
     train_dataset_name = "unicamp-dl/mmarco"
+    train_dataset_config = "indonesian"
     train_dataset_split = "train"
     train_query_column = "query"
     train_positive_column = "positive"
@@ -37,7 +38,9 @@ class args:
 
 
 # Load datasets
-train_ds = load_dataset(args.train_dataset_name, split=args.train_dataset_split)
+train_ds = load_dataset(
+    args.train_dataset_name, args.train_dataset_config, split=args.train_dataset_split
+)
 test_ds = load_dataset(args.test_dataset_name, split=args.test_dataset_split)
 
 # Intialize model with mean pool
