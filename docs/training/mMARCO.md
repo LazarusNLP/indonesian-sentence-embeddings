@@ -25,9 +25,9 @@ python train_bi-encoder_mmarco_mnrl.py \
 
 ### STSB-MT-ID
 
-| Model | Spearman's Correlation (%) | #params | Base Model |
-| ----- | :------------------------: | :-----: | ---------- |
-|       |                            |         |            |
+| Model                                                                              | Spearman's Correlation (%) | #params | Base Model                                                             |
+| ---------------------------------------------------------------------------------- | :------------------------: | :-----: | ---------------------------------------------------------------------- |
+| [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco) |           72.95            |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1) |
 
 ## References
 

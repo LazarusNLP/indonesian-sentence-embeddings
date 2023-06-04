@@ -33,9 +33,9 @@ class Args:
     test_batch_size: int = 32
     learning_rate: float = 2e-5
     warmup_ratio: float = 0.1
-    output_path: str = "exp/mmarco-indobert-base"
+    output_path: str = "exp/s-indobert-base-mmarco"
     # huggingface hub args
-    hub_model_id: str = "LazarusNLP/mmarco-indobert-base"
+    hub_model_id: str = "LazarusNLP/s-indobert-base-mmarco"
     hub_private_repo: bool = True
 
 
