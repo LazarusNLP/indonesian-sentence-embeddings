@@ -16,7 +16,7 @@ We believe that a synthetic baseline is better than no baseline. Therefore, we f
 
 ## Retrieval
 
-To evaluate our models' capability to perform retrieval tasks, we evaluate them on the MIRACL retrieval dataset, which fortunately has an Indonesian subset. The MIRACL dataset measures the ability to retrieve relevant documents given a query.
+To evaluate our models' capability to perform retrieval tasks, we evaluate them on Indonesian subsets of MIRACL and TyDiQA datasets. In both datasets, the model's ability to retrieve relevant documents given a query is tested. We employ R@1 (top-1 accuracy), MRR@10, and nDCG@10 metrics to measure our model's performance.
 
 ## Text Classification
 
@@ -84,6 +84,20 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |   68.33   |    78.85     |     73.84     |
 | [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |   68.95   |    78.92     |     74.58     |
 | [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              | **69.89** |  **80.09**   |   **75.64**   |
+
+### TyDiQA
+
+| Model                                                                                                                       | R@1 (%) ↑ | MRR@10 (%) ↑ | nDCG@10 (%) ↑ |
+| --------------------------------------------------------------------------------------------------------------------------- | :-------: | :----------: | :-----------: |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |   61.94   |    69.89     |     73.52     |
+| [ConGen-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/congen-indobert-lite-base)                                    |   75.22   |    81.55     |     84.13     |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |   73.09   |    80.32     |     83.29     |
+| [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |   72.38   |    79.37     |     82.51     |
+| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |   70.44   |    77.94     |     81.56     |
+| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |   81.41   |    87.05     |     89.44     |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |   90.97   |    94.14     |     95.25     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |   91.85   |    94.88     |     95.82     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              | **94.15** |  **96.36**   |   **97.14**   |
 
 ## Classification
 

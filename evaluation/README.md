@@ -37,6 +37,24 @@ python retrieval/eval_miracl.py \
     --output-folder retrieval/results/congen-simcse-indobert-base
 ```
 
+## TyDiQA
+
+TyDi QA is a question answering dataset covering 11 typologically diverse languages with 204K question-answer pairs. We evaluated our models on the Indonesian subset of MIRACL.
+
+We used Sentence Transformer's [`InformationRetrievalEvaluator`](https://www.sbert.net/docs/package_reference/evaluation.html#sentence_transformers.evaluation.InformationRetrievalEvaluator) to perform inference and evaluate our models.
+
+### Example
+
+```sh
+python retrieval/eval_tydiqa.py \
+    --model-name LazarusNLP/congen-simcse-indobert-base \
+    --test-dataset-name khalidalt/tydiqa-goldp \
+    --test-dataset-config indonesian \
+    --test-dataset-split validation \
+    --test-batch-size 32 \
+    --output-folder retrieval/results/congen-simcse-indobert-base
+```
+
 ## Massive Text Embedding Benchmark (MTEB)
 
 The Massive Text Embedding Benchmark (MTEB) aims to provide clarity on how models perform on a variety of embedding tasks and thus serves as the gateway to finding universal text embeddings applicable to a variety of tasks. We evaluated our models on Indonesian subsets of MTEB that consists of two classification subsets: `MassiveIntentClassification (id)` and `MassiveScenarioClassification (id)`.
