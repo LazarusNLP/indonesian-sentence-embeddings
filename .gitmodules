@@ -1,0 +1,3 @@
+[submodule "evaluation/mteb"]
+	path = evaluation/mteb
+	url = https://github.com/embeddings-benchmark/mteb.git
