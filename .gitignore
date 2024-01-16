@@ -1,7 +1,8 @@
 .DS_Store
 *.pkl
 exp/
-evaluation/retrieval/results/
+evaluation/*/results/
+notebooks/opus-*/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
