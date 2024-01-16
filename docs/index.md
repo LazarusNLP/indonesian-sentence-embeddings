@@ -3,7 +3,7 @@
 Inspired by [Thai Sentence Vector Benchmark](https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark), we decided to embark on the journey of training Indonesian sentence embedding models!
 
 <p align="center">
-    <img src="https://github.com/LazarusNLP/indo-sentence-embeddings/blob/main/docs/assets/logo.png?raw=true" alt="logo" width="400"/>
+    <img src="https://github.com/LazarusNLP/indonesian-sentence-embeddings/blob/main/docs/assets/logo.png?raw=true" alt="logo" width="400"/>
 </p>
 
 To the best of our knowledge, there is no official benchmark on Indonesian sentence embeddings. We hope this repository can serve as a benchmark for future research on Indonesian sentence embeddings.

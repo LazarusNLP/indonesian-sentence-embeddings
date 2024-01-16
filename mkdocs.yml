@@ -1,6 +1,6 @@
 site_name: Indonesian Sentence Embeddings
-site_url: https://lazarusnlp.github.io/indo-sentence-embeddings/
-repo_url: https://github.com/lazarusnlp/indo-sentence-embeddings/
+site_url: https://lazarusnlp.github.io/indonesian-sentence-embeddings/
+repo_url: https://github.com/lazarusnlp/indonesian-sentence-embeddings/
 docs_dir: docs
 
 theme:
