@@ -9,7 +9,7 @@ For practical purposes, we used Sentence Transformer's [`EmbeddingSimilarityEval
 ### Example
 
 ```sh
-python eval_sts.py \
+python sts/eval_sts.py \
     --model-name LazarusNLP/congen-indobert-base \
     --test-dataset-name LazarusNLP/stsb_mt_id \
     --test-dataset-split test \
@@ -17,6 +17,24 @@ python eval_sts.py \
     --test-text-column-2 text_2 \
     --test-label-column correlation \
     --test-batch-size 32
+```
+
+## MIRACL (Multilingual Information Retrieval Across a Continuum of Languages)
+
+MIRACL (Multilingual Information Retrieval Across a Continuum of Languages) is a multilingual retrieval dataset that focuses on search across 18 different languages, which collectively encompass over three billion native speakers around the world. We evaluated our models on the Indonesian subset of MIRACL.
+
+We used Sentence Transformer's [`InformationRetrievalEvaluator`](https://www.sbert.net/docs/package_reference/evaluation.html#sentence_transformers.evaluation.InformationRetrievalEvaluator) to perform inference and evaluate our models.
+
+### Example
+
+```sh
+python retrieval/eval_miracl.py \
+    --model-name LazarusNLP/congen-simcse-indobert-base \
+    --test-dataset-name miracl/miracl \
+    --test-dataset-config id \
+    --test-dataset-split dev \
+    --test-batch-size 32 \
+    --output-folder retrieval/results/congen-simcse-indobert-base
 ```
 
 ## Massive Text Embedding Benchmark (MTEB)

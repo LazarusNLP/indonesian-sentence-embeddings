@@ -14,11 +14,15 @@ We believe that a synthetic baseline is better than no baseline. Therefore, we f
 
 > You can find the translated dataset on [🤗 HuggingFace Hub](https://huggingface.co/datasets/LazarusNLP/stsb_mt_id).
 
-Moreover, we will further evaluate the transferrability of our models on downstream tasks (e.g. text classification, natural language inference, etc.) and compare them with existing pre-trained language models (PLMs).
+## Retrieval
+
+To evaluate our models' capability to perform retrieval tasks, we evaluate them on the MIRACL retrieval dataset, which fortunately has an Indonesian subset. The MIRACL dataset measures the ability to retrieve relevant documents given a query.
 
 ## Text Classification
 
 For text classification, we will be doing emotion classification and sentiment analysis on the EmoT and SmSA subsets of [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu), respectively. To do so, we will be doing the same approach as Thai Sentence Vector Benchmark and simply fit a Linear SVC on sentence representations of our texts with their corresponding labels. Thus, unlike conventional fine-tuning method where the backbone model is also updated, the Sentence Transformer stays frozen in our case; with only the classification head being trained.
+
+Further, we will evaluate our models using the official [MTEB](https://github.com/embeddings-benchmark/mteb.git) code that contains two Indonesian classification subtasks: `MassiveIntentClassification (id)` and `MassiveScenarioClassification (id)`.
 
 # Methods
 
@@ -64,6 +68,22 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |            72.95             |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |            75.08             |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |          **83.83**           |
+
+## Retrieval
+
+### MIRACL
+
+| Model                                                                                                                       | R@1 (%) ↑ | MRR@10 (%) ↑ | nDCG@10 (%) ↑ |
+| --------------------------------------------------------------------------------------------------------------------------- | :-------: | :----------: | :-----------: |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |   36.04   |    48.25     |     39.70     |
+| [ConGen-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/congen-indobert-lite-base)                                    |   46.04   |    59.06     |     51.01     |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |   45.93   |    58.58     |     49.95     |
+| [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |   45.83   |    58.27     |     49.91     |
+| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |   41.35   |    54.93     |     48.79     |
+| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |   52.81   |    65.07     |     57.97     |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |   68.33   |    78.85     |     73.84     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |   68.95   |    78.92     |     74.58     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              | **69.89** |  **80.09**   |   **75.64**   |
 
 ## Classification
 
