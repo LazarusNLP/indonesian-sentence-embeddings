@@ -1,5 +1,7 @@
 git+https://github.com/UKPLab/sentence-transformers.git
 git+https://github.com/w11wo/ConGen.git
+git+https://github.com/w11wo/SCT.git
+git+https://github.com/embeddings-benchmark/mteb.git
 datasets
 scikit-learn
 datargs
