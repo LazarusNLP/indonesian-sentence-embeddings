@@ -107,8 +107,11 @@ def main(args: Args):
     dimension = word_embedding_model.get_word_embedding_dimension()
     pooling_model = models.Pooling(dimension)
     # project student's output pooling to teacher's output dimension
-    dense_model = models.Dense(in_features=dimension, out_features=teacher_dimension, activation_function=nn.Tanh())
-    model = SentenceTransformer(modules=[word_embedding_model, pooling_model, dense_model])
+    if teacher_dimension != dimension:
+        dense_model = models.Dense(in_features=dimension, out_features=teacher_dimension, activation_function=nn.Tanh())
+        model = SentenceTransformer(modules=[word_embedding_model, pooling_model, dense_model])
+    else:
+        model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
 
     # create instance queues
     rep_instance_queue_edited_A = torch.randn(args.queue_size, teacher_dimension).to(device)
@@ -157,7 +160,7 @@ def main(args: Args):
         epochs=args.num_epochs,
         warmup_steps=warmup_steps,
         show_progress_bar=True,
-        optimizer_params={"lr": args.learning_rate, "eps": 1e-6, "correct_bias": False},
+        optimizer_params={"lr": args.learning_rate, "eps": 1e-6},
         output_path=args.output_path,
         save_best_model=True,
         early_stopping_patience=args.early_stopping_patience,
