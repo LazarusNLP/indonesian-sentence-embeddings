@@ -70,6 +70,9 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |            72.95             |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |            75.08             |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |          **83.83**           |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |            78.89             |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |            79.72             |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |            79.44             |
 
 ### Retrieval
 
@@ -144,8 +147,11 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |     57.04      |     57.06      |
 | [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |     59.54      |     60.37      |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |     61.13      |     61.70      |
-| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |   **63.63**    |   **64.13**    |
+| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     63.63      |     64.13      |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     63.18      |     63.78      |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |     64.54      |     65.04      |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |     68.63      |     69.07      |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |   **74.77**    |   **74.66**    |
 
 #### IndoNLU - Sentiment Analysis (SmSA)
 
@@ -157,8 +163,10 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |      83.0      |     78.74      |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |      82.0      |     76.92      |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |      78.8      |     73.64      |
-| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |    **89.6**    |   **86.56**    |
-
+| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |      89.6      |   **86.56**    |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |      83.6      |     79.51      |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |      89.4      |     86.22      |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |    **90.0**    |     86.50      |
 
 ## References
 

@@ -31,6 +31,9 @@ python transfer_text_classification.py \
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |    48.86     |    47.92     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |    63.63     |    64.13     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |    63.18     |    63.78     |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |    64.54     |    65.04     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |    68.63     |    69.07     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |    74.77     |    74.66     |
 
 ## Sentiment Analysis (SmSA) with SVC
 
@@ -59,6 +62,9 @@ python transfer_text_classification.py \
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |     80.2     |    75.73     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     78.8     |    73.64     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     89.6     |    86.56     |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |     83.6     |    79.51     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |     89.4     |    86.22     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |     90.0     |    86.50     |
 
 ## References
 
