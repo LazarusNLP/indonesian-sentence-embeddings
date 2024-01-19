@@ -97,9 +97,9 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |   40.41   |    47.29     |     40.68     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |   41.35   |    54.93     |     48.79     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |   52.81   |    65.07     |     57.97     |
-| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |   68.33   |    78.85     |     73.84     |
-| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |   68.95   |    78.92     |     74.58     |
-| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              | **69.89** |  **80.09**   |   **75.64**   |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |   70.20   |    79.61     |     74.80     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |   70.00   |    79.50     |     75.16     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              | **70.83** |  **80.58**   |   **76.16**   |
 
 #### TyDiQA
 
@@ -112,9 +112,9 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |   76.81   |    83.16     |     85.87     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |   70.44   |    77.94     |     81.56     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |   81.41   |    87.05     |     89.44     |
-| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |   90.97   |    94.14     |     95.25     |
-| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |   91.85   |    94.88     |     95.82     |
-| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              | **94.15** |  **96.36**   |   **97.14**   |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |   91.50   |    94.34     |     95.39     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |   93.45   |    95.88     |     96.69     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              | **94.69** |  **96.71**   |   **97.44**   |
 
 ### Classification
 

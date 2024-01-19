@@ -15,6 +15,8 @@ class Args:
     test_dataset_split: str = "validation"
     test_batch_size: int = 32
     output_folder: str = "results"
+    query_prefix: str = None
+    passage_prefix: str = None
 
 
 def main(args: Args):
@@ -24,6 +26,13 @@ def main(args: Args):
 
     # Load dataset
     test_ds = load_dataset(args.test_dataset_name, args.test_dataset_config, split=args.test_dataset_split)
+
+    # Add prefix for e5 models
+    if args.query_prefix:
+        test_ds = test_ds.map(lambda ex: {"question_text": args.query_prefix + ex["question_text"]})
+    
+    if args.passage_prefix:
+        test_ds = test_ds.map(lambda ex: {"passage_text": args.passage_prefix + ex["passage_text"]})
 
     # Get all queries and documents
     queries = test_ds["question_text"]

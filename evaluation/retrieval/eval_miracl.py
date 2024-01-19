@@ -15,6 +15,8 @@ class Args:
     test_dataset_split: str = "dev"
     test_batch_size: int = 32
     output_folder: str = "results"
+    query_prefix: str = None
+    passage_prefix: str = None
 
 
 def main(args: Args):
@@ -24,6 +26,22 @@ def main(args: Args):
 
     # Load dataset
     test_ds = load_dataset(args.test_dataset_name, args.test_dataset_config, split=args.test_dataset_split)
+
+    # Add prefix for e5 models
+    if args.query_prefix:
+        test_ds = test_ds.map(lambda ex: {"query": args.query_prefix + ex["query"]})
+
+    if args.passage_prefix:
+        test_ds = test_ds.map(
+            lambda ex: {
+                "positive_passages": [{"text": args.passage_prefix + d["text"]} for d in ex["positive_passages"]]
+            }
+        )
+        test_ds = test_ds.map(
+            lambda ex: {
+                "negative_passages": [{"text": args.passage_prefix + d["text"]} for d in ex["negative_passages"]]
+            }
+        )
 
     # Preprocess datasets
     queries, answers, documents = [], [], []
