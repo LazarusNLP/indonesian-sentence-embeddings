@@ -102,6 +102,25 @@ python classification/eval_classification.py \
     --label-column label
 ```
 
+## IndoNLI Pair Classification
+
+We can similarly leverage sentence embedding models for zero-shot pair classification tasks. In our case, we will be doing zero-shot natural language inference on the [IndoNLI](https://huggingface.co/datasets/indonli) dataset. We follow the same evaluation procedure as done on the MTEB PairClassification Benchmark. We drop all neutral pairs and re-mapped contradictions as `0`s and entailments as `1`s. Afterwards, we will search for the best threshold values and find the maximum average precision (AP) score, which also serves as the evaluation metric.
+
+### Example
+
+```sh
+for split in test_lay test_expert
+do
+  python pair_classification/eval_pair_classification.py \
+      --model-name LazarusNLP/simcse-indobert-base \
+      --dataset-name indonli \
+      --test-split-name $split \
+      --text-column-1 premise \
+      --text-column-2 hypothesis \
+      --label-column label
+done
+```
+
 ## References
 
 ```bibtex
@@ -149,6 +168,20 @@ python classification/eval_classification.py \
   author={Bryan Wilie and Karissa Vincentio and Genta Indra Winata and Samuel Cahyawijaya and X. Li and Zhi Yuan Lim and S. Soleman and R. Mahendra and Pascale Fung and Syafri Bahar and A. Purwarianti},
   booktitle={Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 10th International Joint Conference on Natural Language Processing},
   year={2020}
+}
+```
+
+```bibtex
+@inproceedings{mahendra-etal-2021-indonli,
+    itle = "{I}ndo{NLI}: A Natural Language Inference Dataset for {I}ndonesian",
+  author = "Mahendra, Rahmad and Aji, Alham Fikri and Louvan, Samuel and Rahman, Fahrurrozi and Vania, Clara",
+  booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+  month = nov,
+  year = "2021",
+  address = "Online and Punta Cana, Dominican Republic",
+  publisher = "Association for Computational Linguistics",
+  url = "https://aclanthology.org/2021.emnlp-main.821",
+  pages = "10511--10527",
 }
 ```
 

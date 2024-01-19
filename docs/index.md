@@ -24,6 +24,12 @@ For text classification, we will be doing emotion classification and sentiment a
 
 Further, we will evaluate our models using the official [MTEB](https://github.com/embeddings-benchmark/mteb.git) code that contains two Indonesian classification subtasks: `MassiveIntentClassification (id)` and `MassiveScenarioClassification (id)`.
 
+### Pair Classification
+
+We followed [MTEB](https://github.com/embeddings-benchmark/mteb.git)'s PairClassification evaluation procedure for pair classification. Specifically for zero-shot natural language inference tasks, all neutral pairs are dropped, while contradictions and entailments are re-mapped as `0`s and `1`s. The maximum average precision (AP) score is found by finding the best threshold value.
+
+We leverage the [IndoNLI](https://huggingface.co/datasets/indonli) dataset's two test subsets: `test_lay` and `test_expert`.
+
 ## Methods
 
 ### (Unsupervised) SimCSE
@@ -172,6 +178,23 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |      89.4      |     86.22      |
 | [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |    **90.0**    |     86.50      |
 
+### Pair Classification
+
+#### IndoNLI
+
+| Model                                                                                                                       | `test_lay` AP (%) ↑ | `test_expert` AP (%) ↑ |
+| --------------------------------------------------------------------------------------------------------------------------- | :-----------------: | :--------------------: |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |        56.06        |         50.72          |
+| [ConGen-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/congen-indobert-lite-base)                                    |        69.44        |         53.74          |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |        71.14        |         56.35          |
+| [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |        70.80        |         56.59          |
+| [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |        59.82        |         53.41          |
+| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |        58.48        |         50.50          |
+| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |      **74.87**      |       **57.96**        |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |        63.97        |         51.85          |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |        60.25        |         50.91          |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |        61.39        |         51.62          |
+
 ## References
 
 ```bibtex
@@ -218,6 +241,22 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
   booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2022",
   year = "2022",
   publisher = "Association for Computational Linguistics",
+}
+```
+
+```bibtex
+@article{10.1162/tacl_a_00620,
+  author = {Limkonchotiwat, Peerat and Ponwitayarat, Wuttikorn and Lowphansirikul, Lalita and Udomcharoenchaikit, Can and Chuangsuwanich, Ekapol and Nutanong, Sarana},
+  title = "{An Efficient Self-Supervised Cross-View Training For Sentence Embedding}",
+  journal = {Transactions of the Association for Computational Linguistics},
+  volume = {11},
+  pages = {1572-1587},
+  year = {2023},
+  month = {12},
+  issn = {2307-387X},
+  doi = {10.1162/tacl_a_00620},
+  url = {https://doi.org/10.1162/tacl\_a\_00620},
+  eprint = {https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl\_a\_00620/2196817/tacl\_a\_00620.pdf},
 }
 ```
 
