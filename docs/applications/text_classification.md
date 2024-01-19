@@ -27,9 +27,13 @@ python transfer_text_classification.py \
 | [ConGen-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/congen-indobert-lite-base)                                    |    58.18     |    58.84     |
 | [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |    57.04     |    57.06     |
 | [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |    59.54     |    60.37     |
+| [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |    61.13     |    61.70     |
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |    48.86     |    47.92     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |    63.63     |    64.13     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |    63.18     |    63.78     |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |    64.54     |    65.04     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |    68.63     |    69.07     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |    74.77     |    74.66     |
 
 ## Sentiment Analysis (SmSA) with SVC
 
@@ -54,9 +58,13 @@ python transfer_text_classification.py \
 | [ConGen-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/congen-indobert-lite-base)                                    |     81.2     |    75.59     |
 | [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |     85.4     |    82.12     |
 | [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |     83.0     |    78.74     |
+| [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |     82.0     |    76.92     |
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |     80.2     |    75.73     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     78.8     |    73.64     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     89.6     |    86.56     |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |     83.6     |    79.51     |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |     89.4     |    86.22     |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |     90.0     |    86.50     |
 
 ## References
 
