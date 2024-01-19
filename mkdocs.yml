@@ -21,10 +21,11 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
-    # - navigation.tabs
+    - navigation.tabs
     # - navigation.tabs.sticky
-    - navigation.sections
+    # - navigation.sections
     - navigation.top
+    - toc.integrate
 
 plugins:
   - social
