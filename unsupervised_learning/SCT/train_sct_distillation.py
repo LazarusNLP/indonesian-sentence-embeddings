@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import pickle
+import random
 import math
 import os
 
@@ -46,12 +47,19 @@ class Args:
     queue_size: int = 65536
     student_temp: float = 0.5
     teacher_temp: float = 0.5
+    do_corrupt: bool = False
     # cached encoded datasets
     encoded_ref_1_path: str = "encoded_ref_1.pkl"
     encoded_ref_2_path: str = "encoded_ref_2.pkl"
     # huggingface hub args
     hub_model_id: str = "LazarusNLP/sct-indobert-base"
     hub_private_repo: bool = True
+
+
+def corrupt(text: str) -> str:
+    words = text.split()
+    del_idx = random.choice(range(len(words)))
+    return " ".join([w for i, w in enumerate(words) if i != del_idx])
 
 
 def main(args: Args):
@@ -90,8 +98,13 @@ def main(args: Args):
     try:
         encoded_ref_2 = pickle.load(open(args.encoded_ref_2_path, "rb"))
     except:
+        if args.do_corrupt:
+            sentences = [corrupt(text) for text in train_ds[args.train_text_column_1]]
+        else:
+            sentences = train_ds[args.train_text_column_2]
+
         encoded_ref_2 = teacher_model.encode(
-            train_ds[args.train_text_column_2],
+            sentences,
             convert_to_tensor=True,
             normalize_embeddings=True,
             show_progress_bar=True,
