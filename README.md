@@ -8,7 +8,7 @@ Inspired by [Thai Sentence Vector Benchmark](https://github.com/mrpeerat/Thai-Se
 
 ## Evaluation
 
-### Machine Translated STS-B
+### Semantic Textual Similarity
 
 We believe that a synthetic baseline is better than no baseline. Therefore, we followed approached done in the Thai Sentence Vector Benchmark project and translated the [STS-B](https://github.com/facebookresearch/SentEval) dev and test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set.
 
@@ -18,7 +18,7 @@ We believe that a synthetic baseline is better than no baseline. Therefore, we f
 
 To evaluate our models' capability to perform retrieval tasks, we evaluate them on Indonesian subsets of MIRACL and TyDiQA datasets. In both datasets, the model's ability to retrieve relevant documents given a query is tested. We employ R@1 (top-1 accuracy), MRR@10, and nDCG@10 metrics to measure our model's performance.
 
-### Text Classification
+### Classification
 
 For text classification, we will be doing emotion classification and sentiment analysis on the EmoT and SmSA subsets of [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu), respectively. To do so, we will be doing the same approach as Thai Sentence Vector Benchmark and simply fit a Linear SVC on sentence representations of our texts with their corresponding labels. Thus, unlike conventional fine-tuning method where the backbone model is also updated, the Sentence Transformer stays frozen in our case; with only the classification head being trained.
 
@@ -33,6 +33,10 @@ We followed [SimCSE: Simple Contrastive Learning of Sentence Embeddings](https:/
 ### ConGen
 
 Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For Sentence Representation](https://github.com/KornWtp/ConGen) is another unsupervised technique to train a sentence embedding model. Since it is in-part a distillation method, ConGen relies on a teacher model which will then be distilled to a student model. The original paper proposes back-translation as the best data augmentation technique. However, due to the lack of resources, we implemented word deletion, which was found to be on-par with back-translation despite being trivial. We used the [official ConGen implementation](https://github.com/KornWtp/ConGen) which was written on top of the Sentence Transformers library.
+
+### SCT
+
+[SCT: An Efficient Self-Supervised Cross-View Training For Sentence Embedding](https://github.com/mrpeerat/SCT) is another unsupervised technique to train a sentence embedding model. It is very similar to ConGen in its knowledge distillation methodology, but also supports self-supervised training procedure without a teacher model. The original paper proposes back-translation as its data augmentation technique, but we implemented single-word deletion and found it to perform better than our backtranslated corpus. We used the [official SCT implementation](https://github.com/mrpeerat/SCT) which was written on top of the Sentence Transformers library.
 
 ## Models
 

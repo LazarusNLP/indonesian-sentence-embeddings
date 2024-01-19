@@ -70,6 +70,38 @@ mteb \
     --output_folder mteb/results/congen-simcse-indobert-base
 ```
 
+## IndoNLU Text Classification
+
+Normally, sentence embedding models are leveraged for downstream tasks such as information retrieval, semantic search, clustering, etc. Text classification could similarly leverage these models' sentence embedding capabilities.
+
+We will be doing emotion classification and sentiment analysis on the EmoT and SmSA subsets of [IndoNLU](https://huggingface.co/datasets/indonlp/indonlu), respectively. To do so, we will be doing the same approach as [Thai Sentence Vector Benchmark](https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark) and simply fit a Linear SVC on sentence representations of our texts with their corresponding labels. Thus, unlike conventional fine-tuning method where the backbone model is also updated, the Sentence Transformer stays frozen in our case; with only the classification head being trained.
+
+### Example: Emotion Classification
+
+```sh
+python classification/eval_classification.py \
+    --model-name LazarusNLP/simcse-indobert-base \
+    --dataset-name indonlp/indonlu \
+    --dataset-config emot \
+    --train-split-name train \
+    --test-split-name test \
+    --text-column tweet \
+    --label-column label
+```
+
+### Example: Sentiment Analysis
+
+```sh
+python classification/eval_classification.py \
+    --model-name LazarusNLP/simcse-indobert-base \
+    --dataset-name indonlp/indonlu \
+    --dataset-config smsa \
+    --train-split-name train \
+    --test-split-name test \
+    --text-column text \
+    --label-column label
+```
+
 ## References
 
 ```bibtex
@@ -84,6 +116,22 @@ mteb \
 ```
 
 ```bibtex
+@article{10.1162/tacl_a_00595,
+  author = {Zhang, Xinyu and Thakur, Nandan and Ogundepo, Odunayo and Kamalloo, Ehsan and Alfonso-Hermelo, David and Li, Xiaoguang and Liu, Qun and Rezagholizadeh, Mehdi and Lin, Jimmy},
+  title = "{MIRACL: A Multilingual Retrieval Dataset Covering 18 Diverse Languages}",
+  journal = {Transactions of the Association for Computational Linguistics},
+  volume = {11},
+  pages = {1114-1131},
+  year = {2023},
+  month = {09},
+  issn = {2307-387X},
+  doi = {10.1162/tacl_a_00595},
+  url = {https://doi.org/10.1162/tacl\_a\_00595},
+  eprint = {https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl\_a\_00595/2157340/tacl\_a\_00595.pdf},
+}
+```
+
+```bibtex
 @article{muennighoff2022mteb,
   doi = {10.48550/ARXIV.2210.07316},
   url = {https://arxiv.org/abs/2210.07316},
@@ -92,6 +140,15 @@ mteb \
   publisher = {arXiv},
   journal={arXiv preprint arXiv:2210.07316},  
   year = {2022}
+}
+```
+
+```bibtex
+@inproceedings{wilie2020indonlu,
+  title={IndoNLU: Benchmark and Resources for Evaluating Indonesian Natural Language Understanding},
+  author={Bryan Wilie and Karissa Vincentio and Genta Indra Winata and Samuel Cahyawijaya and X. Li and Zhi Yuan Lim and S. Soleman and R. Mahendra and Pascale Fung and Syafri Bahar and A. Purwarianti},
+  booktitle={Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 10th International Joint Conference on Natural Language Processing},
+  year={2020}
 }
 ```
 
