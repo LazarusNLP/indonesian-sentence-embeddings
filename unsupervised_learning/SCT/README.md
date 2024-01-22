@@ -12,8 +12,8 @@ Training via SCT requires an unsupervised corpus, which is readily available for
 python train_sct_distillation.py \
     --model-name indobenchmark/indobert-base-p1 \
     --train-dataset-name LazarusNLP/wikipedia_id_backtranslated \
-    --train_text_column_1 text \
-    --do_corrupt \
+    --train-text-column-1 text \
+    --do-corrupt \
     --max-seq-length 128 \
     --num-epochs 20 \
     --train-batch-size 128 \
