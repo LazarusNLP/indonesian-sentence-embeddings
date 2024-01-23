@@ -183,7 +183,7 @@ def main(args: Args):
         epochs=args.num_epochs,
         warmup_steps=warmup_steps,
         show_progress_bar=True,
-        optimizer_params={"lr": args.learning_rate, "eps": 1e-6, "correct_bias": False},
+        optimizer_params={"lr": args.learning_rate, "eps": 1e-6},
         output_path=args.output_path,
         save_best_model=True,
         early_stopping_patience=args.early_stopping_patience,

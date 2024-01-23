@@ -60,6 +60,24 @@ python train_con_gen.py \
     --teacher-temp 0.5
 ```
 
+### Multilingual e5 Small
+
+```sh
+python train_con_gen.py \
+    --model-name intfloat/multilingual-e5-small \
+    --train-dataset-name LazarusNLP/wikipedia_id_20230520 \
+    --max-seq-length 128 --min-text-length 150 --max-text-length 500 \
+    --max-train-samples 1000000 \
+    --num-epochs 20 \
+    --train-batch-size 128 \
+    --early-stopping-patience 7 \
+    --learning-rate 1e-4 \
+    --teacher-model-name sentence-transformers/paraphrase-multilingual-mpnet-base-v2 \
+    --queue-size 65536 \
+    --student-temp 0.5 \
+    --teacher-temp 0.5
+```
+
 ## Results
 
 ### STSB-MT-ID
