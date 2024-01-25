@@ -60,16 +60,6 @@ python train_con_gen.py \
     --teacher-temp 0.5
 ```
 
-## Results
-
-### STSB-MT-ID
-
-| Model                                                                                        | Spearman's Correlation (%) | #params | Base/Student Model                                                               | Teacher Model                                                                                                               | Train Dataset                                                                 |
-| -------------------------------------------------------------------------------------------- | :------------------------: | :-----: | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [ConGen-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/congen-indobert-lite-base)     |           79.97            |   12M   | [IndoBERT Lite Base](https://huggingface.co/indobenchmark/indobert-lite-base-p1) | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)               |           80.47            |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)           | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-| [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base) |           81.16            |  125M   | [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)   | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-
 ## References
 
 ```bibtex

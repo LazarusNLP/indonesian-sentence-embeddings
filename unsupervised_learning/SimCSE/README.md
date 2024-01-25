@@ -45,16 +45,6 @@ python train_sim_cse.py \
     --learning-rate 3e-5
 ```
 
-## Results
-
-### STSB-MT-ID
-
-| Model                                                                                    | Spearman's Correlation (%) | #params | Base Model                                                                        | Train Dataset                                                                 |
-| ---------------------------------------------------------------------------------------- | :------------------------: | :-----: | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [SimCSE-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/simcse-indobert-lite-base) |           44.08            |   12M   | [IndoBERT Lite Base](https://huggingface.co/indobenchmark/indobert-lite-base-p1)  | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-| [SimCSE-IndoRoBERTa Base](https://huggingface.co/LazarusNLP/simcse-indoroberta-base)     |           61.26            |  125M   | [IndoRoBERTa Base](https://huggingface.co/flax-community/indonesian-roberta-base) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)           |           70.13            |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)            | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520) |
-
 ## References
 
 ```bibtex

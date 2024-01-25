@@ -46,8 +46,6 @@ python train_sct_distillation.py \
     --teacher-temp 0.5
 ```
 
-## Results
-
 ## References
 
 ```bibtex
