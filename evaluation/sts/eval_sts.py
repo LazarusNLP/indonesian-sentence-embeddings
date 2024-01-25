@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import os
 
 from datargs import parse
 from datasets import load_dataset
@@ -15,9 +16,12 @@ class Args:
     test_text_column_2: str = "text_2"
     test_label_column: str = "correlation"
     test_batch_size: int = 32
+    output_folder: str = "results"
 
 
 def main(args: Args):
+    os.makedirs(args.output_folder, exist_ok=True)
+
     model = SentenceTransformer(args.model_name)
 
     # Load dataset
@@ -31,11 +35,8 @@ def main(args: Args):
         for data in test_ds
     ]
 
-    evaluator = EmbeddingSimilarityEvaluator.from_input_examples(
-        test_data, batch_size=args.test_batch_size
-    )
-
-    print(evaluator(model))
+    evaluator = EmbeddingSimilarityEvaluator.from_input_examples(test_data, batch_size=args.test_batch_size)
+    evaluator(model, output_path=args.output_folder)
 
 
 if __name__ == "__main__":

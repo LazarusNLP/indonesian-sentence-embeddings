@@ -1,6 +1,8 @@
 # Modified from: https://github.com/embeddings-benchmark/mteb/blob/main/mteb/evaluation/evaluators/PairClassificationEvaluator.py
 
 from dataclasses import dataclass
+import json
+import os
 
 import numpy as np
 from datargs import parse
@@ -22,6 +24,7 @@ class Args:
     neutral_label: int = 1
     contradiction_label: int = 2
     encode_batch_size: int = 128
+    output_folder: str = "results"
 
 
 def compute_metrics(model, sentences_1, sentences_2, labels, batch_size):
@@ -136,6 +139,8 @@ def ap_score(scores, labels, high_score_more_similar: bool):
 
 
 def main(args: Args):
+    os.makedirs(args.output_folder, exist_ok=True)
+
     model = SentenceTransformer(args.model_name)
 
     test_ds = load_dataset(args.dataset_name, split=args.test_split_name, trust_remote_code=True)
@@ -157,7 +162,8 @@ def main(args: Args):
     main_score = max(scores[short_name]["ap"] for short_name in scores)
     scores["main_score"] = main_score
 
-    print(scores)
+    with open(f"{args.output_folder}/{args.dataset_name}_{args.test_split_name}.json", "w") as f:
+        json.dump(scores, f, indent=4)
 
 
 if __name__ == "__main__":

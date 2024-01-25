@@ -1,6 +1,8 @@
 # Modified from: https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark/blob/main/Transfer_Evaluation/transfer.py
 
 from dataclasses import dataclass
+import json
+import os
 
 from datargs import parse
 from datasets import load_dataset
@@ -19,9 +21,12 @@ class Args:
     text_column: str = "tweet"
     label_column: str = "label"
     encode_batch_size: int = 128
+    output_folder: str = "results"
 
 
 def main(args: Args):
+    os.makedirs(args.output_folder, exist_ok=True)
+
     model = SentenceTransformer(args.model_name)
 
     dataset = load_dataset(args.dataset_name, args.dataset_config)
@@ -46,9 +51,7 @@ def main(args: Args):
     predictions = classifier.predict(test_text_encoded)
 
     acc = accuracy_score(test_ds[args.label_column], predictions)
-    precision, recall, f1, _ = precision_recall_fscore_support(
-        test_ds[args.label_column], predictions, average="macro"
-    )
+    precision, recall, f1, _ = precision_recall_fscore_support(test_ds[args.label_column], predictions, average="macro")
 
     results = {
         "accuracy": acc,
@@ -57,7 +60,9 @@ def main(args: Args):
         "f1": f1,
     }
 
-    print(results)
+    task_name = f"{args.dataset_name.split('/')[-1]}_{args.dataset_config}"
+    with open(f"{args.output_folder}/{task_name}_{args.test_split_name}.json", "w") as f:
+        json.dump(results, f, indent=4)
 
 
 if __name__ == "__main__":
