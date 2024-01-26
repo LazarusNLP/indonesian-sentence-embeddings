@@ -58,6 +58,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)                        | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) | [Wikipedia](https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520)  |            |
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)                        | N/A                                                                                                                         | [mMARCO](https://huggingface.co/datasets/unicamp-dl/mmarco)                    |     ✅      |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)                        | N/A                                                                                                                         | See: [README](./training/all/)                                                 |     ✅      |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |  125M   | [IndoBERT Base](https://huggingface.co/indobenchmark/indobert-base-p1)                        | N/A                                                                                                                         | See: [README](./training/all/)                                                 |     ✅      |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |  125M   | [IndoBERT Base p2](https://huggingface.co/indobenchmark/indobert-base-p2)                     | N/A                                                                                                                         | See: [README](./training/all/)                                                 |     ✅      |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |  134M   | [DistilBERT Base Multilingual](https://huggingface.co/distilbert-base-multilingual-cased)     | mUSE                                                                                                                        | See: [SBERT](https://www.sbert.net/docs/pretrained_models.html#model-overview) |     ✅      |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |  125M   | [XLM-RoBERTa Base](https://huggingface.co/xlm-roberta-base)                                   | [paraphrase-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-mpnet-base-v2)                           | See: [SBERT](https://www.sbert.net/docs/pretrained_models.html#model-overview) |     ✅      |
@@ -83,6 +84,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |            74.56             |
 | [S-IndoBERT Base mMARCO](https://huggingface.co/LazarusNLP/s-indobert-base-mmarco)                                          |            72.95             |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |            73.84             |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |            76.03             |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |            73.45             |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |            75.08             |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |          **83.83**           |
@@ -103,6 +105,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |   55.00   |    66.74     |     58.95     |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |   40.41   |    47.29     |     40.68     |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |   65.52   |    75.92     |     70.13     |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |   67.18   |    76.59     |     70.16     |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |   60.62   |    71.95     |     66.31     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |   41.35   |    54.93     |     48.79     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |   52.81   |    65.07     |     57.97     |
@@ -121,6 +124,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |   84.60   |    89.30     |     91.27     |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |   76.81   |    83.16     |     85.87     |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |   88.14   |    91.47     |     92.91     |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |   87.61   |    90.91     |     92.31     |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |   87.78   |    91.14     |     92.58     |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |   70.44   |    77.94     |     81.56     |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |   81.41   |    87.05     |     89.44     |
@@ -141,6 +145,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |     62.92      |     60.18      |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |     55.66      |     54.48      |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |     58.40      |     57.21      |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |     58.31      |     57.11      |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |     60.36      |     59.29      |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     55.99      |     52.44      |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     65.43      |     63.55      |
@@ -159,6 +164,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |     66.92      |     66.29      |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |     61.89      |     60.97      |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |     66.37      |     66.31      |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |     66.02      |     65.s97     |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |     68.90      |     68.88      |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     65.25      |     63.45      |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     70.72      |     70.58      |
@@ -177,6 +183,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |     60.00      |     60.52      |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |     61.13      |     61.70      |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |     57.27      |     57.47      |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |     58.86      |     59.31      |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |     57.04      |     57.14      |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |     63.63      |     64.13      |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |     63.18      |     63.78      |
@@ -195,6 +202,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |      84.2      |     80.21      |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |      82.0      |     76.92      |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |      84.4      |     79.79      |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |      83.4      |     79.04      |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |      84.8      |     80.03      |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |      78.8      |     73.64      |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |      89.6      |   **86.56**    |
@@ -215,6 +223,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |        70.51        |         55.67          |
 | [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |        59.82        |         53.41          |
 | [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |        72.01        |         56.79          |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |        71.36        |         56.83          |
 | [all-IndoBERT Base p2](https://huggingface.co/LazarusNLP/all-indobert-base-p2)                                              |        69.32        |         54.76          |
 | [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |        58.48        |         50.50          |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |      **74.87**      |       **57.96**        |
