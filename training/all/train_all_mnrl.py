@@ -6,7 +6,19 @@ from datasets import load_dataset
 from sentence_transformers import SentenceTransformer, InputExample, models, losses
 from sentence_transformers.evaluation import EmbeddingSimilarityEvaluator
 
-from all_datasets import IndoNLI, IndoStoryCloze, mMARCO, MIRACL, WReTE, IndoLEMNTP, TyDiQA, FacQA
+from all_datasets import (
+    IndoNLI,
+    IndoStoryCloze,
+    mMARCO,
+    MIRACL,
+    WReTE,
+    IndoLEMNTP,
+    TyDiQA,
+    FacQA,
+    LFQAID,
+    IndoQA,
+    ParaphraseDetection,
+)
 from MultiDatasetDataLoader import MultiDatasetDataLoader
 
 
@@ -47,6 +59,9 @@ def main(args: Args):
         "SEACrowd/indolem_ntp": IndoLEMNTP,
         "khalidalt/tydiqa-goldp": TyDiQA,
         "SEACrowd/facqa": FacQA,
+        "indonesian-nlp/lfqa_id": LFQAID,
+        "jakartaresearch/indoqa": IndoQA,
+        "jakartaresearch/id-paraphrase-detection": ParaphraseDetection,
     }
 
     train_ds = [ds.train_samples() for ds in raw_datasets.values()]

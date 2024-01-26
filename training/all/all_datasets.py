@@ -4,6 +4,7 @@ import random
 
 from datasets import load_dataset
 from sentence_transformers import InputExample
+import numpy as np
 
 ##############
 # PAIRS
@@ -74,6 +75,58 @@ class FacQA:
 
             train_samples.append(InputExample(texts=[question, passage]))
             train_samples.append(InputExample(texts=[question, answer]))
+
+        return train_samples
+
+
+@dataclass
+class LFQAID:
+    dataset = load_dataset("indonesian-nlp/lfqa_id", split="train", trust_remote_code=True)
+
+    @staticmethod
+    def train_samples() -> List[InputExample]:
+        train_samples = []
+
+        for datum in LFQAID.dataset:
+            question = datum["title"]
+            scores = datum["answers"]["score"]
+            answer = datum["answers"]["text"][np.argmax(scores)]
+
+            train_samples.append(InputExample(texts=[question, answer]))
+
+        return train_samples
+
+
+@dataclass
+class IndoQA:
+    dataset = load_dataset("jakartaresearch/indoqa", split="train", trust_remote_code=True)
+
+    @staticmethod
+    def train_samples() -> List[InputExample]:
+        train_samples = []
+
+        for datum in IndoQA.dataset:
+            question = datum["question"]
+            passage = datum["context"]
+            answer = datum["answer"]
+
+            if question and passage and answer:
+                train_samples.append(InputExample(texts=[question, passage]))
+                train_samples.append(InputExample(texts=[question, answer]))
+
+        return train_samples
+
+
+@dataclass
+class ParaphraseDetection:
+    dataset = load_dataset("jakartaresearch/id-paraphrase-detection", split="train", trust_remote_code=True)
+
+    @staticmethod
+    def train_samples() -> List[InputExample]:
+        train_samples = []
+
+        for datum in ParaphraseDetection.dataset:
+            train_samples.append(InputExample(texts=[datum["sentence1"], datum["sentence2"]]))
 
         return train_samples
 
