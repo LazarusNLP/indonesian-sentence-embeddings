@@ -34,6 +34,18 @@ python train_all_mnrl.py \
     --learning-rate 2e-5
 ```
 
+### Multilingual e5 Small
+
+```sh
+python train_all_mnrl.py \
+    --model-name intfloat/multilingual-e5-small \
+    --max-seq-length 128 \
+    --num-epochs 5 \
+    --train-batch-size-pairs 384 \
+    --train-batch-size-triplets 256 \
+    --learning-rate 2e-5
+```
+
 ## References
 
 ```bibtex
