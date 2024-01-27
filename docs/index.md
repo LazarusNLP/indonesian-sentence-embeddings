@@ -44,7 +44,7 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 
 [SCT: An Efficient Self-Supervised Cross-View Training For Sentence Embedding](https://github.com/mrpeerat/SCT) is another unsupervised technique to train a sentence embedding model. It is very similar to ConGen in its knowledge distillation methodology, but also supports self-supervised training procedure without a teacher model. The original paper proposes back-translation as its data augmentation technique, but we implemented single-word deletion and found it to perform better than our backtranslated corpus. We used the [official SCT implementation](https://github.com/mrpeerat/SCT) which was written on top of the Sentence Transformers library.
 
-## Models
+## Pretrained Models
 
 | Model                                                                                                                       | #params | Base/Student Model                                                                            | Teacher Model                                                                                                               | Train Dataset                                                                  | Supervised |
 | --------------------------------------------------------------------------------------------------------------------------- | :-----: | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | :--------: |
@@ -233,71 +233,6 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |        63.97        |         51.85          |
 | [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |        60.25        |         50.91          |
 | [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |        61.39        |         51.62          |
-
-## References
-
-```bibtex
-@misc{Thai-Sentence-Vector-Benchmark-2022,
-  author = {Limkonchotiwat, Peerat},
-  title = {Thai-Sentence-Vector-Benchmark},
-  year = {2022},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark}}
-}
-```
-
-```bibtex
-@inproceedings{reimers-2019-sentence-bert,
-  title = "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
-  author = "Reimers, Nils and Gurevych, Iryna",
-  booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing",
-  month = "11",
-  year = "2019",
-  publisher = "Association for Computational Linguistics",
-  url = "https://arxiv.org/abs/1908.10084",
-}
-```
-
-```bibtex
-@inproceedings{gao2021simcse,
-  title={{SimCSE}: Simple Contrastive Learning of Sentence Embeddings},
-  author={Gao, Tianyu and Yao, Xingcheng and Chen, Danqi},
-  booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
-  year={2021}
-}
-```
-
-```bibtex
-@inproceedings{limkonchotiwat-etal-2022-congen,
-  title = "{ConGen}: Unsupervised Control and Generalization Distillation For Sentence Representation",
-  author = "Limkonchotiwat, Peerat  and
-    Ponwitayarat, Wuttikorn  and
-    Lowphansirikul, Lalita and
-    Udomcharoenchaikit, Can  and
-    Chuangsuwanich, Ekapol  and
-    Nutanong, Sarana",
-  booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2022",
-  year = "2022",
-  publisher = "Association for Computational Linguistics",
-}
-```
-
-```bibtex
-@article{10.1162/tacl_a_00620,
-  author = {Limkonchotiwat, Peerat and Ponwitayarat, Wuttikorn and Lowphansirikul, Lalita and Udomcharoenchaikit, Can and Chuangsuwanich, Ekapol and Nutanong, Sarana},
-  title = "{An Efficient Self-Supervised Cross-View Training For Sentence Embedding}",
-  journal = {Transactions of the Association for Computational Linguistics},
-  volume = {11},
-  pages = {1572-1587},
-  year = {2023},
-  month = {12},
-  issn = {2307-387X},
-  doi = {10.1162/tacl_a_00620},
-  url = {https://doi.org/10.1162/tacl\_a\_00620},
-  eprint = {https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl\_a\_00620/2196817/tacl\_a\_00620.pdf},
-}
-```
 
 ## Credits
 
