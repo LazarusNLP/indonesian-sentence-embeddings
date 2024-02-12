@@ -12,6 +12,22 @@ import numpy as np
 
 
 @dataclass
+class MultilingualNLI:
+    dataset = load_dataset("LazarusNLP/multilingual-NLI-26lang-2mil7-id", split="train", trust_remote_code=True)
+    # filter for entailment pairs
+    dataset = dataset.filter(lambda example: example["label"] == 0)
+
+    @staticmethod
+    def train_samples() -> List[InputExample]:
+        train_samples = []
+
+        for datum in MultilingualNLI.dataset:
+            train_samples.append(InputExample(texts=[datum["premise"], datum["hypothesis"]]))
+
+        return train_samples
+
+
+@dataclass
 class WReTE:
     dataset = load_dataset("SEACrowd/wrete", split="train", trust_remote_code=True)
     # filter for entailment pairs

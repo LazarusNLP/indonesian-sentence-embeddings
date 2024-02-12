@@ -4,21 +4,23 @@ Inspired by [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-
 
 ## Training Data
 
-| Dataset                                                                                                            |              Task              |                 Data Instance                 | Number of Training Tuples |
-| ------------------------------------------------------------------------------------------------------------------ | :----------------------------: | :-------------------------------------------: | :-----------------------: |
-| [indonli](https://huggingface.co/datasets/indonli)                                                                 |   Natural Language Inference   |    `(premise, entailment, contradiction)`     |           3,914           |
-| [indolem/indo_story_cloze](https://huggingface.co/datasets/indolem/indo_story_cloze)                               |     Commonsense Reasoning      | `(context, correct ending, incorrect ending)` |           1,000           |
-| [unicamp-dl/mmarco](https://huggingface.co/datasets/unicamp-dl/mmarco)                                             |       Passage Retrieval        | `(query, positive passage, negative passage)` |          100,000          |
-| [miracl/miracl](https://huggingface.co/datasets/miracl/miracl)                                                     |       Passage Retrieval        | `(query, positive passage, negative passage)` |           8,086           |
-| [SEACrowd/wrete](https://huggingface.co/datasets/SEACrowd/wrete)                                                   |       Textual Entailment       |           `(sentenceA, sentenceB)`            |            183            |
-| [SEACrowd/indolem_ntp](https://huggingface.co/datasets/SEACrowd/indolem_ntp)                                       |       Textual Entailment       |             `(tweet, next tweet)`             |           5,681           |
-| [khalidalt/tydiqa-goldp](https://huggingface.co/datasets/khalidalt/tydiqa-goldp)                                   | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |          11,404           |
-| [SEACrowd/facqa](https://huggingface.co/datasets/SEACrowd/facqa)                                                   | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           4,990           |
-| *included in v2*                                                                                                   |
-| [indonesian-nlp/lfqa_id](https://huggingface.co/datasets/indonesian-nlp/lfqa_id)                                   | Open-domain Question-Answering |             `(question, answer)`              |          226,147          |
-| [jakartaresearch/indoqa](https://huggingface.co/datasets/jakartaresearch/indoqa)                                   | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           6,498           |
-| [jakartaresearch/id-paraphrase-detection](https://huggingface.co/datasets/jakartaresearch/id-paraphrase-detection) |           Paraphrase           |       `(sentence, rephrased sentence)`        |           4,076           |
-| **Total**                                                                                                          |                                |                                               |        **371,979**        |
+| Dataset                                                                                                                    |              Task              |                 Data Instance                 | Number of Training Tuples |
+| -------------------------------------------------------------------------------------------------------------------------- | :----------------------------: | :-------------------------------------------: | :-----------------------: |
+| [indonli](https://huggingface.co/datasets/indonli)                                                                         |   Natural Language Inference   |    `(premise, entailment, contradiction)`     |           3,914           |
+| [indolem/indo_story_cloze](https://huggingface.co/datasets/indolem/indo_story_cloze)                                       |     Commonsense Reasoning      | `(context, correct ending, incorrect ending)` |           1,000           |
+| [unicamp-dl/mmarco](https://huggingface.co/datasets/unicamp-dl/mmarco)                                                     |       Passage Retrieval        | `(query, positive passage, negative passage)` |          100,000          |
+| [miracl/miracl](https://huggingface.co/datasets/miracl/miracl)                                                             |       Passage Retrieval        | `(query, positive passage, negative passage)` |           8,086           |
+| [SEACrowd/wrete](https://huggingface.co/datasets/SEACrowd/wrete)                                                           |       Textual Entailment       |           `(sentenceA, sentenceB)`            |            183            |
+| [SEACrowd/indolem_ntp](https://huggingface.co/datasets/SEACrowd/indolem_ntp)                                               |       Textual Entailment       |             `(tweet, next tweet)`             |           5,681           |
+| [khalidalt/tydiqa-goldp](https://huggingface.co/datasets/khalidalt/tydiqa-goldp)                                           | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |          11,404           |
+| [SEACrowd/facqa](https://huggingface.co/datasets/SEACrowd/facqa)                                                           | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           4,990           |
+| *included in v2*                                                                                                           |
+| [indonesian-nlp/lfqa_id](https://huggingface.co/datasets/indonesian-nlp/lfqa_id)                                           | Open-domain Question-Answering |             `(question, answer)`              |          226,147          |
+| [jakartaresearch/indoqa](https://huggingface.co/datasets/jakartaresearch/indoqa)                                           | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           6,498           |
+| [jakartaresearch/id-paraphrase-detection](https://huggingface.co/datasets/jakartaresearch/id-paraphrase-detection)         |           Paraphrase           |       `(sentence, rephrased sentence)`        |           4,076           |
+| *included in v3*                                                                                                           |
+| [LazarusNLP/multilingual-NLI-26lang-2mil7-id](https://huggingface.co/datasets/LazarusNLP/multilingual-NLI-26lang-2mil7-id) |   Natural Language Inference   |      `(premise, entailement hypothesis)`      |          41,924           |
+| **Total**                                                                                                                  |                                |                                               |        **413,903**        |
 
 ## All Supervised Datasets with MultipleNegativesRankingLoss
 
