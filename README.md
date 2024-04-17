@@ -1,5 +1,9 @@
 # Indonesian Sentence Embeddings
 
+<p align="center">
+    <a href="https://zenodo.org/doi/10.5281/zenodo.10983755"><img src="https://zenodo.org/badge/646080771.svg" alt="DOI"></a>
+</p>
+
 Inspired by [Thai Sentence Vector Benchmark](https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark), we decided to embark on the journey of training Indonesian sentence embedding models!
 
 <p align="center">
