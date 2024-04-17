@@ -1,0 +1,26 @@
+abstract: Embedding Representation for Indonesian Sentences!
+authors:
+- affiliation: Lazarus NLP
+  family-names: Wongso
+  given-names: Wilson
+  orcid: 0000-0003-0896-1941
+- affiliation: Lazarus NLP
+  family-names: Joyoadikusumo
+  given-names: Ananto
+  orcid: 0009-0004-1761-4137
+- affiliation: Lazarus NLP
+  family-names: Setiawan
+  given-names: David Samuel
+  orcid: 0009-0001-2286-8439
+- affiliation: Lazarus NLP
+  family-names: Limcorn
+  given-names: Steven
+cff-version: 1.2.0
+date-released: '2024-04-17'
+doi: 10.5281/zenodo.10983756
+license:
+- apache-2.0
+repository-code: https://github.com/LazarusNLP/indonesian-sentence-embeddings/tree/v0.0.1
+title: 'LazarusNLP/indonesian-sentence-embeddings: v0.0.1'
+type: software
+version: v0.0.1
