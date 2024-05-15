@@ -41,6 +41,7 @@ class Args:
     train_batch_size_pairs: int = 384
     train_batch_size_triplets: int = 256
     test_batch_size: int = 32
+    mini_batch_size: int = 128
     learning_rate: float = 2e-5
     warmup_ratio: float = 0.1
     output_path: str = "exp/all-indobert-base"
@@ -98,7 +99,7 @@ def main(args: Args):
     evaluator = EmbeddingSimilarityEvaluator.from_input_examples(test_data, batch_size=args.test_batch_size)
 
     # Use the denoising auto-encoder loss
-    train_loss = losses.MultipleNegativesRankingLoss(model)
+    train_loss = losses.CachedMultipleNegativesRankingLoss(model, mini_batch_size=args.mini_batch_size)
 
     # Call the fit method
     model.fit(

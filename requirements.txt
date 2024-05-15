@@ -5,3 +5,4 @@ git+https://github.com/embeddings-benchmark/mteb.git
 datasets
 scikit-learn
 datargs
+nusacrowd

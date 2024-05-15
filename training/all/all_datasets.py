@@ -197,6 +197,42 @@ class MIRACL:
 
 
 @dataclass
+class SwimIR:
+    dataset = load_dataset("nthakur/swim-ir-monolingual", "id", split="train")
+
+    @staticmethod
+    def train_samples() -> List[InputExample]:
+        train_data = {}
+        train_samples = []
+
+        for datum in SwimIR.dataset:
+            query = datum["query"].strip()
+            answer = datum["text"].strip()
+            title = datum["title"].strip()
+
+            if title not in train_data:
+                train_data[title] = {query: [answer]}
+            elif title in train_data and query not in train_data[title]:
+                train_data[title][query] = [answer]
+            else:
+                train_data[title][query].append(answer)
+
+        for title, queries in train_data.items():
+            passage_queries = list(queries.keys())
+            # cannot get a negative sample if only 1 query in that passage
+            if len(passage_queries) > 1:
+                for query, answers in queries.items():
+                    positive = random.choice(answers)
+                    # get random negative sample, from different query
+                    random_query = random.choice([q for q in passage_queries if q != query])
+                    negative = random.choice(queries[random_query])
+
+                    train_samples.append(InputExample(texts=[query, positive, negative]))
+
+        return train_samples
+
+
+@dataclass
 class IndoStoryCloze:
     dataset = load_dataset("indolem/indo_story_cloze", split="train", trust_remote_code=True)
 

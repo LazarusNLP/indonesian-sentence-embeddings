@@ -19,8 +19,10 @@ Inspired by [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-
 | [jakartaresearch/indoqa](https://huggingface.co/datasets/jakartaresearch/indoqa)                                           | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           6,498           |
 | [jakartaresearch/id-paraphrase-detection](https://huggingface.co/datasets/jakartaresearch/id-paraphrase-detection)         |           Paraphrase           |       `(sentence, rephrased sentence)`        |           4,076           |
 | *included in v3*                                                                                                           |
-| [LazarusNLP/multilingual-NLI-26lang-2mil7-id](https://huggingface.co/datasets/LazarusNLP/multilingual-NLI-26lang-2mil7-id) |   Natural Language Inference   |      `(premise, entailement hypothesis)`      |          41,924           |
-| **Total**                                                                                                                  |                                |                                               |        **413,903**        |
+| [LazarusNLP/multilingual-NLI-26lang-2mil7-id](https://huggingface.co/datasets/LazarusNLP/multilingual-NLI-26lang-2mil7-id) |   Natural Language Inference   |      `(premise, entailment, hypothesis)`      |          41,924           |
+| *included in v4*                                                                                                           |
+| [nthakur/swim-ir-monolingual](https://huggingface.co/datasets/nthakur/swim-ir-monolingual)                                 |       Passage Retrieval        | `(query, positive passage, negative passage)` |          227,145          |
+| **Total**                                                                                                                  |                                |                                               |        **641,048**        |
 
 ## All Supervised Datasets with MultipleNegativesRankingLoss
 
@@ -45,6 +47,21 @@ python train_all_mnrl.py \
     --num-epochs 5 \
     --train-batch-size-pairs 384 \
     --train-batch-size-triplets 256 \
+    --learning-rate 2e-5
+```
+
+## All Supervised Datasets with CachedMultipleNegativesRankingLoss
+
+### IndoBERT Base
+
+```sh
+python train_all_mnrl.py \
+    --model-name indobenchmark/indobert-base-p1 \
+    --max-seq-length 128 \
+    --num-epochs 5 \
+    --train-batch-size-pairs 384 \
+    --train-batch-size-triplets 256 \
+    --mini-batch-size 320 \
     --learning-rate 2e-5
 ```
 
