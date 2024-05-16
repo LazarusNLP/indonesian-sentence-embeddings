@@ -62,14 +62,9 @@ python classification/eval_classification.py \
     --label-column label \
     --output-folder classification/results/$model_name
 
-mteb \
-    -m $model \
-    -l id \
-    --output_folder mteb/results/$model_name
-
-###############################
+##############################
 # SEMANTIC TEXTUAL SIMILARITY
-###############################
+##############################
 
 python sts/eval_sts.py \
     --model-name $model \
@@ -80,3 +75,95 @@ python sts/eval_sts.py \
     --test-label-column correlation \
     --test-batch-size 32 \
     --output-folder sts/results/$model_name
+
+###############################
+# MTEB TASKS
+###############################
+
+for lang in id ind ind-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/ind
+done
+
+for lang in jv jav jav-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/jav
+done
+
+for lang in sun sun-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/sun
+done
+
+for lang in ace ace-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/ace
+done
+
+for lang in ban ban-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/ban
+done
+
+for lang in bbc
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/bbc
+done
+
+for lang in bjn bjn-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/bjn
+done
+
+for lang in bug bug-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/bug
+done
+
+for lang in mad
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/mad
+done
+
+for lang in min min-Latn
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/min
+done
+
+for lang in nij
+do
+    mteb \
+        -m $model \
+        -l $lang \
+        --output_folder mteb/results/$model_name/nij
+done
