@@ -55,13 +55,26 @@ python train_all_mnrl.py \
 ### IndoBERT Base
 
 ```sh
-python train_all_mnrl.py \
+python train_all_cached_mnrl.py \
     --model-name indobenchmark/indobert-base-p1 \
     --max-seq-length 128 \
     --num-epochs 5 \
     --train-batch-size-pairs 384 \
     --train-batch-size-triplets 256 \
     --mini-batch-size 320 \
+    --learning-rate 2e-5
+```
+
+### NusaBERT Large
+
+```sh
+python train_all_cached_mnrl.py \
+    --model-name LazarusNLP/NusaBERT-large \
+    --max-seq-length 128 \
+    --num-epochs 3 \
+    --train-batch-size-pairs 384 \
+    --train-batch-size-triplets 256 \
+    --mini-batch-size 80 \
     --learning-rate 2e-5
 ```
 
