@@ -26,8 +26,6 @@ class Args:
     train_embeddings_column: str = "emb"
     max_seq_length: int = 128
     max_train_samples: int = 1_000_000
-    min_text_length: int = 20
-    max_text_length: int = 200
     # test
     test_dataset_name: str = "LazarusNLP/stsb_mt_id"
     test_dataset_split: str = "validation"
@@ -63,12 +61,6 @@ def main(args: Args):
     train_ds = train_ds.with_format(type="torch", columns=[args.train_embeddings_column])
     test_ds = load_dataset(args.test_dataset_name, split=args.test_dataset_split)
 
-    # Preprocess train set
-    num_proc = os.cpu_count()
-    train_ds = train_ds.filter(
-        lambda x: args.min_text_length < len(x["text"]) < args.max_text_length,
-        num_proc=num_proc,
-    )  # filter by length
     # select random train samples
     train_ds = train_ds.shuffle(seed=42).select(range(args.max_train_samples))
 
