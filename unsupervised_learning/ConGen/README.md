@@ -78,6 +78,25 @@ python train_con_gen.py \
     --teacher-temp 0.5
 ```
 
+## ConGen with Cohere Embeddings
+
+### NusaBERT Base
+
+```sh
+python train_con_gen_cohere.py \
+    --model-name LazarusNLP/NusaBERT-base \
+    --train-dataset-name Cohere/wikipedia-2023-11-embed-multilingual-v3 \
+    --max-seq-length 128 \
+    --max-train-samples 1000000 \
+    --num-epochs 20 \
+    --train-batch-size 128 \
+    --early-stopping-patience 7 \
+    --learning-rate 1e-4 \
+    --queue-size 65536 \
+    --student-temp 0.5 \
+    --teacher-temp 0.5
+```
+
 ## References
 
 ```bibtex

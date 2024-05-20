@@ -88,6 +88,9 @@ def main(args: Args):
     )
     model = SentenceTransformer(modules=[word_embedding_model, pooling_model, dense_model])
 
+    # move encoded texts to the same device as model
+    encoded_texts = encoded_texts.to(model._target_device)
+
     # create instance queue
     text_in_queue = np.random.RandomState(16349).choice(
         train_ds[args.train_text_column], args.queue_size, replace=False
