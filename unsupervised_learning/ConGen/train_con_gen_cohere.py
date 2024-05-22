@@ -104,6 +104,10 @@ def main(args: Args):
     # convert list of 1d embeddings tensor as a 2d tensor
     instance_queue_encoded = torch.stack(instance_queue_encoded)
 
+    # normalize embeddings w.r.t. each tensor
+    encoded_texts = torch.nn.functional.normalize(encoded_texts, p=2, dim=1)
+    instance_queue_encoded = torch.nn.functional.normalize(instance_queue_encoded, p=2, dim=1)
+
     # Use ConGen loss
     train_loss = losses.ConGenLoss(
         instanceQ_encoded=instance_queue_encoded,
