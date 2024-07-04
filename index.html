@@ -1,0 +1,2282 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lazarusnlp.github.io/indonesian-sentence-embeddings/">
+      
+      
+      
+        <link rel="next" href="evaluation/evaluation/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Indonesian Sentence Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Indonesian Sentence Embeddings" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://lazarusnlp.github.io/indonesian-sentence-embeddings/assets/images/social/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://lazarusnlp.github.io/indonesian-sentence-embeddings/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Indonesian Sentence Embeddings" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://lazarusnlp.github.io/indonesian-sentence-embeddings/assets/images/social/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#indonesian-sentence-embeddings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Indonesian Sentence Embeddings" class="md-header__button md-logo" aria-label="Indonesian Sentence Embeddings" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Indonesian Sentence Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Indonesian Sentence Embeddings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lazarusnlp/indonesian-sentence-embeddings/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+    
+  
+  Indonesian Sentence Embeddings
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="evaluation/evaluation/" class="md-tabs__link">
+          
+  
+  Evaluation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="training/all/" class="md-tabs__link">
+          
+  
+  Training
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="unsupervised_learning/ConGen/" class="md-tabs__link">
+          
+  
+  Unsupervised learning
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Indonesian Sentence Embeddings" class="md-nav__button md-logo" aria-label="Indonesian Sentence Embeddings" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Indonesian Sentence Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lazarusnlp/indonesian-sentence-embeddings/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Indonesian Sentence Embeddings
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Indonesian Sentence Embeddings
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-textual-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Textual Similarity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pair-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pair Classification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsupervised-simcse" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Unsupervised) SimCSE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#congen" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConGen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sct" class="md-nav__link">
+    <span class="md-ellipsis">
+      SCT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pretrained-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pretrained Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-textual-similarity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Textual Similarity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Textual Similarity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#machine-translated-indonesian-sts-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Translated Indonesian STS-B
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semrel2024-semantic-textual-relatedness-str" class="md-nav__link">
+    <span class="md-ellipsis">
+      SemRel2024: Semantic Textual Relatedness (STR)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieval_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miracl" class="md-nav__link">
+    <span class="md-ellipsis">
+      MIRACL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tydiqa" class="md-nav__link">
+    <span class="md-ellipsis">
+      TyDiQA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mteb-massive-intent-classification-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      MTEB - Massive Intent Classification (id)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mteb-massive-scenario-classification-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      MTEB - Massive Scenario Classification (id)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indonlu-emotion-classification-emot" class="md-nav__link">
+    <span class="md-ellipsis">
+      IndoNLU - Emotion Classification (EmoT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indonlu-sentiment-analysis-smsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      IndoNLU - Sentiment Analysis (SmSA)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pair-classification_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pair Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pair Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indonli" class="md-nav__link">
+    <span class="md-ellipsis">
+      IndoNLI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credits
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Evaluation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="evaluation/evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Training
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="training/all/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All Supervised Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="training/mMARCO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mMARCO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unsupervised learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unsupervised learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unsupervised_learning/ConGen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConGen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unsupervised_learning/SCT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SCT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unsupervised_learning/SimCSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SimCSE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="indonesian-sentence-embeddings">Indonesian Sentence Embeddings</h1>
+<p align="center">
+    <a href="https://zenodo.org/doi/10.5281/zenodo.10983755"><img src="https://zenodo.org/badge/646080771.svg" alt="DOI"></a>
+</p>
+
+<p>Inspired by <a href="https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark">Thai Sentence Vector Benchmark</a>, we decided to embark on the journey of training Indonesian sentence embedding models!</p>
+<p align="center">
+    <img src="https://github.com/LazarusNLP/indonesian-sentence-embeddings/blob/main/docs/assets/logo.png?raw=true" alt="logo" width="400"/>
+</p>
+
+<h2 id="evaluation">Evaluation</h2>
+<h3 id="semantic-textual-similarity">Semantic Textual Similarity</h3>
+<p>We followed approached done in the Thai Sentence Vector Benchmark project and translated the <a href="https://github.com/facebookresearch/SentEval">STS-B</a> dev and test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set.</p>
+<blockquote>
+<p>You can find the translated dataset on <a href="https://huggingface.co/datasets/LazarusNLP/stsb_mt_id">🤗 HuggingFace Hub</a>.</p>
+</blockquote>
+<p>Further, we will similarly be evaluating our models on the <a href="https://huggingface.co/datasets/SemRel/SemRel2024">SemRel2024</a> dataset which contains human-annotated, Indonesian semantic textual relatedness (STR) data. The dataset consists of two splits: <code>dev</code> and <code>test</code>. We will be evaluating our models' Spearman correlation score on both splits.</p>
+<h3 id="retrieval">Retrieval</h3>
+<p>To evaluate our models' capability to perform retrieval tasks, we evaluate them on Indonesian subsets of MIRACL and TyDiQA datasets. In both datasets, the model's ability to retrieve relevant documents given a query is tested. We employ R@1 (top-1 accuracy), MRR@10, and nDCG@10 metrics to measure our model's performance.</p>
+<h3 id="classification">Classification</h3>
+<p>For text classification, we will be doing emotion classification and sentiment analysis on the EmoT and SmSA subsets of <a href="https://huggingface.co/datasets/indonlp/indonlu">IndoNLU</a>, respectively. To do so, we will be doing the same approach as Thai Sentence Vector Benchmark and simply fit a Linear SVC on sentence representations of our texts with their corresponding labels. Thus, unlike conventional fine-tuning method where the backbone model is also updated, the Sentence Transformer stays frozen in our case; with only the classification head being trained.</p>
+<p>Further, we will evaluate our models using the official <a href="https://github.com/embeddings-benchmark/mteb.git">MTEB</a> code that contains two Indonesian classification subtasks: <code>MassiveIntentClassification (id)</code> and <code>MassiveScenarioClassification (id)</code>.</p>
+<h3 id="pair-classification">Pair Classification</h3>
+<p>We followed <a href="https://github.com/embeddings-benchmark/mteb.git">MTEB</a>'s PairClassification evaluation procedure for pair classification. Specifically for zero-shot natural language inference tasks, all neutral pairs are dropped, while contradictions and entailments are re-mapped as <code>0</code>s and <code>1</code>s. The maximum average precision (AP) score is found by finding the best threshold value.</p>
+<p>We leverage the <a href="https://huggingface.co/datasets/indonli">IndoNLI</a> dataset's two test subsets: <code>test_lay</code> and <code>test_expert</code>.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="unsupervised-simcse">(Unsupervised) SimCSE</h3>
+<p>We followed <a href="https://arxiv.org/abs/2104.08821">SimCSE: Simple Contrastive Learning of Sentence Embeddings</a> and trained a sentence embedding model in an unsupervised fashion. Unsupervised SimCSE allows us to leverage an unsupervised corpus -- which are plenty -- and with different dropout masks in the encoder, contrastively learn sentence representations. This is parallel with the situation that there is a lack of supervised Indonesian sentence similarity datasets, hence SimCSE is a natural first move into this field. We used the <a href="https://www.sbert.net/examples/unsupervised_learning/README.html#simcse">Sentence Transformer implementation</a> of <a href="https://github.com/princeton-nlp/SimCSE">SimCSE</a>.</p>
+<h3 id="congen">ConGen</h3>
+<p>Like SimCSE, <a href="https://github.com/KornWtp/ConGen">ConGen: Unsupervised Control and Generalization Distillation For Sentence Representation</a> is another unsupervised technique to train a sentence embedding model. Since it is in-part a distillation method, ConGen relies on a teacher model which will then be distilled to a student model. The original paper proposes back-translation as the best data augmentation technique. However, due to the lack of resources, we implemented word deletion, which was found to be on-par with back-translation despite being trivial. We used the <a href="https://github.com/KornWtp/ConGen">official ConGen implementation</a> which was written on top of the Sentence Transformers library.</p>
+<h3 id="sct">SCT</h3>
+<p><a href="https://github.com/mrpeerat/SCT">SCT: An Efficient Self-Supervised Cross-View Training For Sentence Embedding</a> is another unsupervised technique to train a sentence embedding model. It is very similar to ConGen in its knowledge distillation methodology, but also supports self-supervised training procedure without a teacher model. The original paper proposes back-translation as its data augmentation technique, but we implemented single-word deletion and found it to perform better than our backtranslated corpus. We used the <a href="https://github.com/mrpeerat/SCT">official SCT implementation</a> which was written on top of the Sentence Transformers library.</p>
+<h2 id="pretrained-models">Pretrained Models</h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">#params</th>
+<th>Base/Student Model</th>
+<th>Teacher Model</th>
+<th>Train Dataset</th>
+<th style="text-align: center;">Supervised</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p1">IndoBERT Base</a></td>
+<td>N/A</td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">12M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-lite-base-p1">IndoBERT Lite Base</a></td>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p1">IndoBERT Base</a></td>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">118M</td>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p1">IndoBERT Base</a></td>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p1">IndoBERT Base</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p1">IndoBERT Base</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p1">IndoBERT Base</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">111M</td>
+<td><a href="https://huggingface.co/LazarusNLP/nusabert-base">NusaBERT Base</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">337M</td>
+<td><a href="https://huggingface.co/LazarusNLP/nusabert-large">NusaBERT Large</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">118M</td>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">118M</td>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">118M</td>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">134M</td>
+<td><a href="https://huggingface.co/distilbert-base-multilingual-cased">DistilBERT Base Multilingual</a></td>
+<td>mUSE</td>
+<td>See: <a href="https://www.sbert.net/docs/pretrained_models.html#model-overview">SBERT</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/xlm-roberta-base">XLM-RoBERTa Base</a></td>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-mpnet-base-v2">paraphrase-mpnet-base-v2</a></td>
+<td>See: <a href="https://www.sbert.net/docs/pretrained_models.html#model-overview">SBERT</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">118M</td>
+<td><a href="https://huggingface.co/microsoft/Multilingual-MiniLM-L12-H384">Multilingual-MiniLM-L12-H384</a></td>
+<td>See: <a href="https://arxiv.org/abs/2212.03533">arXiv</a></td>
+<td>See: <a href="https://huggingface.co/intfloat/multilingual-e5-small">🤗</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">278M</td>
+<td><a href="https://huggingface.co/xlm-roberta-base">XLM-RoBERTa Base</a></td>
+<td>See: <a href="https://arxiv.org/abs/2212.03533">arXiv</a></td>
+<td>See: <a href="https://huggingface.co/intfloat/multilingual-e5-base">🤗</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;">560M</td>
+<td><a href="https://huggingface.co/xlm-roberta-large">XLM-RoBERTa Large</a></td>
+<td>See: <a href="https://arxiv.org/abs/2212.03533">arXiv</a></td>
+<td>See: <a href="https://huggingface.co/intfloat/multilingual-e5-large">🤗</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>Deprecated Models</summary>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">#params</th>
+<th>Base/Student Model</th>
+<th>Teacher Model</th>
+<th>Train Dataset</th>
+<th style="text-align: center;">Supervised</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-lite-base">SimCSE-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">12M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-lite-base-p1">IndoBERT Lite Base</a></td>
+<td>N/A</td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indoroberta-base">SimCSE-IndoRoBERTa Base</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/flax-community/indonesian-roberta-base">IndoRoBERTa Base</a></td>
+<td>N/A</td>
+<td><a href="https://huggingface.co/datasets/LazarusNLP/wikipedia_id_20230520">Wikipedia</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/s-indobert-base-mmarco">S-IndoBERT Base mMARCO</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p1">IndoBERT Base</a></td>
+<td>N/A</td>
+<td><a href="https://huggingface.co/datasets/unicamp-dl/mmarco">mMARCO</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-p2">all-IndoBERT Base p2</a></td>
+<td style="text-align: center;">125M</td>
+<td><a href="https://huggingface.co/indobenchmark/indobert-base-p2">IndoBERT Base p2</a></td>
+<td>N/A</td>
+<td>See: <a href="./training/all/">README</a></td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="results">Results</h2>
+<h3 id="semantic-textual-similarity_1">Semantic Textual Similarity</h3>
+<h4 id="machine-translated-indonesian-sts-b">Machine Translated Indonesian STS-B</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">Spearman's Correlation (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">70.13</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">79.97</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">80.47</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">81.16</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">80.94</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">74.56</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">73.84</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">76.03</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">75.99</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">77.65</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">79.23</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">79.57</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">79.95</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">79.85</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">75.08</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;"><strong>83.83</strong></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">78.89</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">79.72</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;">79.44</td>
+</tr>
+</tbody>
+</table>
+<h4 id="semrel2024-semantic-textual-relatedness-str">SemRel2024: Semantic Textual Relatedness (STR)</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;"><code>dev</code> Spearman's Correlation (%) ↑</th>
+<th style="text-align: center;"><code>test</code> Spearman's Correlation (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">30.64</td>
+<td style="text-align: center;">36.77</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">35.95</td>
+<td style="text-align: center;">41.73</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">35.05</td>
+<td style="text-align: center;">39.14</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">33.71</td>
+<td style="text-align: center;">37.73</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">36.35</td>
+<td style="text-align: center;">42.47</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">41.50</td>
+<td style="text-align: center;">43.25</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;"><strong>42.87</strong></td>
+<td style="text-align: center;">38.78</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">41.68</td>
+<td style="text-align: center;">40.42</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">41.38</td>
+<td style="text-align: center;">38.05</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">42.11</td>
+<td style="text-align: center;">41.55</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">40.21</td>
+<td style="text-align: center;">42.25</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">39.79</td>
+<td style="text-align: center;">43.85</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">40.25</td>
+<td style="text-align: center;">42.60</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">40.20</td>
+<td style="text-align: center;">42.90</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">37.22</td>
+<td style="text-align: center;">49.35</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">34.56</td>
+<td style="text-align: center;">37.51</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">41.92</td>
+<td style="text-align: center;"><strong>49.60</strong></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">41.29</td>
+<td style="text-align: center;">45.04</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;">39.20</td>
+<td style="text-align: center;">45.04</td>
+</tr>
+</tbody>
+</table>
+<h3 id="retrieval_1">Retrieval</h3>
+<h4 id="miracl">MIRACL</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">R@1 (%) ↑</th>
+<th style="text-align: center;">MRR@10 (%) ↑</th>
+<th style="text-align: center;">nDCG@10 (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">36.04</td>
+<td style="text-align: center;">48.25</td>
+<td style="text-align: center;">39.70</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">46.04</td>
+<td style="text-align: center;">59.06</td>
+<td style="text-align: center;">51.01</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">45.93</td>
+<td style="text-align: center;">58.58</td>
+<td style="text-align: center;">49.95</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">45.83</td>
+<td style="text-align: center;">58.27</td>
+<td style="text-align: center;">49.91</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">55.00</td>
+<td style="text-align: center;">66.74</td>
+<td style="text-align: center;">58.95</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">40.41</td>
+<td style="text-align: center;">47.29</td>
+<td style="text-align: center;">40.68</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">65.52</td>
+<td style="text-align: center;">75.92</td>
+<td style="text-align: center;">70.13</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">67.18</td>
+<td style="text-align: center;">76.59</td>
+<td style="text-align: center;">70.16</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">67.91</td>
+<td style="text-align: center;">77.37</td>
+<td style="text-align: center;">70.97</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">67.08</td>
+<td style="text-align: center;">77.47</td>
+<td style="text-align: center;">71.24</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">68.43</td>
+<td style="text-align: center;">78.29</td>
+<td style="text-align: center;">71.99</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">68.33</td>
+<td style="text-align: center;">78.33</td>
+<td style="text-align: center;">73.04</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">68.12</td>
+<td style="text-align: center;">78.22</td>
+<td style="text-align: center;">73.09</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">68.33</td>
+<td style="text-align: center;">78.41</td>
+<td style="text-align: center;">73.23</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">41.35</td>
+<td style="text-align: center;">54.93</td>
+<td style="text-align: center;">48.79</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">52.81</td>
+<td style="text-align: center;">65.07</td>
+<td style="text-align: center;">57.97</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">70.20</td>
+<td style="text-align: center;">79.61</td>
+<td style="text-align: center;">74.80</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">70.00</td>
+<td style="text-align: center;">79.50</td>
+<td style="text-align: center;">75.16</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;"><strong>70.83</strong></td>
+<td style="text-align: center;"><strong>80.58</strong></td>
+<td style="text-align: center;"><strong>76.16</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tydiqa">TyDiQA</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">R@1 (%) ↑</th>
+<th style="text-align: center;">MRR@10 (%) ↑</th>
+<th style="text-align: center;">nDCG@10 (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">61.94</td>
+<td style="text-align: center;">69.89</td>
+<td style="text-align: center;">73.52</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">75.22</td>
+<td style="text-align: center;">81.55</td>
+<td style="text-align: center;">84.13</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">73.09</td>
+<td style="text-align: center;">80.32</td>
+<td style="text-align: center;">83.29</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">72.38</td>
+<td style="text-align: center;">79.37</td>
+<td style="text-align: center;">82.51</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">84.60</td>
+<td style="text-align: center;">89.30</td>
+<td style="text-align: center;">91.27</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">76.81</td>
+<td style="text-align: center;">83.16</td>
+<td style="text-align: center;">85.87</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">88.14</td>
+<td style="text-align: center;">91.47</td>
+<td style="text-align: center;">92.91</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">87.61</td>
+<td style="text-align: center;">90.91</td>
+<td style="text-align: center;">92.31</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">89.02</td>
+<td style="text-align: center;">92.59</td>
+<td style="text-align: center;">93.91</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">92.74</td>
+<td style="text-align: center;">94.95</td>
+<td style="text-align: center;">95.73</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">93.62</td>
+<td style="text-align: center;">95.77</td>
+<td style="text-align: center;">96.56</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">93.27</td>
+<td style="text-align: center;">95.63</td>
+<td style="text-align: center;">96.46</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">93.27</td>
+<td style="text-align: center;">95.72</td>
+<td style="text-align: center;">96.58</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">93.45</td>
+<td style="text-align: center;">95.66</td>
+<td style="text-align: center;">96.43</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">70.44</td>
+<td style="text-align: center;">77.94</td>
+<td style="text-align: center;">81.56</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">81.41</td>
+<td style="text-align: center;">87.05</td>
+<td style="text-align: center;">89.44</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">91.50</td>
+<td style="text-align: center;">94.34</td>
+<td style="text-align: center;">95.39</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">93.45</td>
+<td style="text-align: center;">95.88</td>
+<td style="text-align: center;">96.69</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;"><strong>94.69</strong></td>
+<td style="text-align: center;"><strong>96.71</strong></td>
+<td style="text-align: center;"><strong>97.44</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="classification_1">Classification</h3>
+<h4 id="mteb-massive-intent-classification-id">MTEB - Massive Intent Classification <code>(id)</code></h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">Accuracy (%) ↑</th>
+<th style="text-align: center;">F1 Macro (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">59.71</td>
+<td style="text-align: center;">57.70</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">62.41</td>
+<td style="text-align: center;">60.94</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">61.14</td>
+<td style="text-align: center;">60.02</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">60.93</td>
+<td style="text-align: center;">59.50</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">62.92</td>
+<td style="text-align: center;">60.18</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">55.66</td>
+<td style="text-align: center;">54.48</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">58.40</td>
+<td style="text-align: center;">57.21</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">58.31</td>
+<td style="text-align: center;">57.11</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">57.80</td>
+<td style="text-align: center;">56.71</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">62.10</td>
+<td style="text-align: center;">60.38</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">61.41</td>
+<td style="text-align: center;">59.93</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">61.51</td>
+<td style="text-align: center;">59.24</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">61.63</td>
+<td style="text-align: center;">59.29</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">61.38</td>
+<td style="text-align: center;">59.07</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">55.99</td>
+<td style="text-align: center;">52.44</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">65.43</td>
+<td style="text-align: center;">63.55</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">64.16</td>
+<td style="text-align: center;">61.33</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">66.63</td>
+<td style="text-align: center;">63.88</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;"><strong>70.04</strong></td>
+<td style="text-align: center;"><strong>67.66</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="mteb-massive-scenario-classification-id">MTEB - Massive Scenario Classification <code>(id)</code></h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">Accuracy (%) ↑</th>
+<th style="text-align: center;">F1 Macro (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">66.14</td>
+<td style="text-align: center;">65.56</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">67.25</td>
+<td style="text-align: center;">66.53</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">67.72</td>
+<td style="text-align: center;">67.32</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">67.12</td>
+<td style="text-align: center;">66.64</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">66.92</td>
+<td style="text-align: center;">66.29</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">61.89</td>
+<td style="text-align: center;">60.97</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">66.37</td>
+<td style="text-align: center;">66.31</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">66.02</td>
+<td style="text-align: center;">65.97</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">66.33</td>
+<td style="text-align: center;">66.14</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">70.17</td>
+<td style="text-align: center;">70.18</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">70.10</td>
+<td style="text-align: center;">70.38</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">67.02</td>
+<td style="text-align: center;">66.86</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">67.27</td>
+<td style="text-align: center;">67.13</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">67.33</td>
+<td style="text-align: center;">67.24</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">65.25</td>
+<td style="text-align: center;">63.45</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">70.72</td>
+<td style="text-align: center;">70.58</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">67.92</td>
+<td style="text-align: center;">67.23</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">70.70</td>
+<td style="text-align: center;">70.26</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;"><strong>74.11</strong></td>
+<td style="text-align: center;"><strong>73.82</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="indonlu-emotion-classification-emot">IndoNLU - Emotion Classification (EmoT)</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">Accuracy (%) ↑</th>
+<th style="text-align: center;">F1 Macro (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">55.45</td>
+<td style="text-align: center;">55.78</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">58.18</td>
+<td style="text-align: center;">58.84</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">57.04</td>
+<td style="text-align: center;">57.06</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">59.54</td>
+<td style="text-align: center;">60.37</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">60.00</td>
+<td style="text-align: center;">60.52</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">61.13</td>
+<td style="text-align: center;">61.70</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">57.27</td>
+<td style="text-align: center;">57.47</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">58.86</td>
+<td style="text-align: center;">59.31</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">61.36</td>
+<td style="text-align: center;">61.81</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">53.18</td>
+<td style="text-align: center;">53.01</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">63.18</td>
+<td style="text-align: center;">63.17</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">58.18</td>
+<td style="text-align: center;">57.99</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">56.81</td>
+<td style="text-align: center;">56.46</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">56.94</td>
+<td style="text-align: center;">57.04</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">63.63</td>
+<td style="text-align: center;">64.13</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">63.18</td>
+<td style="text-align: center;">63.78</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">64.54</td>
+<td style="text-align: center;">65.04</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">68.63</td>
+<td style="text-align: center;">69.07</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;"><strong>74.77</strong></td>
+<td style="text-align: center;"><strong>74.66</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="indonlu-sentiment-analysis-smsa">IndoNLU - Sentiment Analysis (SmSA)</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">Accuracy (%) ↑</th>
+<th style="text-align: center;">F1 Macro (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">85.6</td>
+<td style="text-align: center;">81.50</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">81.2</td>
+<td style="text-align: center;">75.59</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">85.4</td>
+<td style="text-align: center;">82.12</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">83.0</td>
+<td style="text-align: center;">78.74</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">84.2</td>
+<td style="text-align: center;">80.21</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">82.0</td>
+<td style="text-align: center;">76.92</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">84.4</td>
+<td style="text-align: center;">79.79</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">83.4</td>
+<td style="text-align: center;">79.04</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">82.4</td>
+<td style="text-align: center;">77.82</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">84.2</td>
+<td style="text-align: center;">78.68</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">84.8</td>
+<td style="text-align: center;">81.01</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;">82.0</td>
+<td style="text-align: center;">78.15</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">82.6</td>
+<td style="text-align: center;">78.98</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">82.6</td>
+<td style="text-align: center;">79.14</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">78.8</td>
+<td style="text-align: center;">73.64</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">89.6</td>
+<td style="text-align: center;"><strong>86.56</strong></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">83.6</td>
+<td style="text-align: center;">79.51</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">89.4</td>
+<td style="text-align: center;">86.22</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;"><strong>90.0</strong></td>
+<td style="text-align: center;">86.50</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pair-classification_1">Pair Classification</h3>
+<h4 id="indonli">IndoNLI</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;"><code>test_lay</code> AP (%) ↑</th>
+<th style="text-align: center;"><code>test_expert</code> AP (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/simcse-indobert-base">SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">56.06</td>
+<td style="text-align: center;">50.72</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-lite-base">ConGen-IndoBERT Lite Base</a></td>
+<td style="text-align: center;">69.44</td>
+<td style="text-align: center;">53.74</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indobert-base">ConGen-IndoBERT Base</a></td>
+<td style="text-align: center;">71.14</td>
+<td style="text-align: center;">56.35</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-simcse-indobert-base">ConGen-SimCSE-IndoBERT Base</a></td>
+<td style="text-align: center;">70.80</td>
+<td style="text-align: center;">56.59</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/congen-indo-e5-small">ConGen-Indo-e5 Small</a></td>
+<td style="text-align: center;">70.51</td>
+<td style="text-align: center;">55.67</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/sct-indobert-base">SCT-IndoBERT Base</a></td>
+<td style="text-align: center;">59.82</td>
+<td style="text-align: center;">53.41</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base">all-IndoBERT Base</a></td>
+<td style="text-align: center;">72.01</td>
+<td style="text-align: center;">56.79</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v2">all-IndoBERT Base-v2</a></td>
+<td style="text-align: center;">71.36</td>
+<td style="text-align: center;">56.83</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indobert-base-v4">all-IndoBERT Base-v4</a></td>
+<td style="text-align: center;">70.99</td>
+<td style="text-align: center;">58.99</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-base-v4">all-NusaBERT Base-v4</a></td>
+<td style="text-align: center;">73.07</td>
+<td style="text-align: center;">59.86</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-nusabert-large-v4">all-NusaBERT Large-v4</a></td>
+<td style="text-align: center;">73.26</td>
+<td style="text-align: center;"><strong>61.14</strong></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v2">all-Indo-e5 Small-v2</a></td>
+<td style="text-align: center;"><strong>76.29</strong></td>
+<td style="text-align: center;">57.05</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v3">all-Indo-e5 Small-v3</a></td>
+<td style="text-align: center;">75.21</td>
+<td style="text-align: center;">56.62</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/LazarusNLP/all-indo-e5-small-v4">all-Indo-e5 Small-v4</a></td>
+<td style="text-align: center;">75.05</td>
+<td style="text-align: center;">57.42</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2">distiluse-base-multilingual-cased-v2</a></td>
+<td style="text-align: center;">58.48</td>
+<td style="text-align: center;">50.50</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</a></td>
+<td style="text-align: center;">74.87</td>
+<td style="text-align: center;">57.96</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-small">multilingual-e5-small</a></td>
+<td style="text-align: center;">63.97</td>
+<td style="text-align: center;">51.85</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-base">multilingual-e5-base</a></td>
+<td style="text-align: center;">60.25</td>
+<td style="text-align: center;">50.91</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/intfloat/multilingual-e5-large">multilingual-e5-large</a></td>
+<td style="text-align: center;">61.39</td>
+<td style="text-align: center;">51.62</td>
+</tr>
+</tbody>
+</table>
+<h2 id="credits">Credits</h2>
+<p>Indonesian Sentence Embeddings is developed with love by:</p>
+<div style="display: flex;">
+<a href="https://github.com/anantoj">
+    <img src="https://github.com/anantoj.png" alt="GitHub Profile" style="border-radius: 50%;width: 64px;border: solid 0px #fff;margin:0 4px;">
+</a>
+
+<a href="https://github.com/DavidSamuell">
+    <img src="https://github.com/DavidSamuell.png" alt="GitHub Profile" style="border-radius: 50%;width: 64px;border: solid 0px #fff;margin:0 4px;">
+</a>
+
+<a href="https://github.com/stevenlimcorn">
+    <img src="https://github.com/stevenlimcorn.png" alt="GitHub Profile" style="border-radius: 50%;width: 64px;border: solid 0px #fff;margin:0 4px;">
+</a>
+
+<a href="https://github.com/w11wo">
+    <img src="https://github.com/w11wo.png" alt="GitHub Profile" style="border-radius: 50%;width: 64px;border: solid 0px #fff;margin:0 4px;">
+</a>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.integrate"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
