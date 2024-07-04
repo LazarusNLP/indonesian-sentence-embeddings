@@ -2,7 +2,7 @@
 
 ## Machine Translated STS-B
 
-To the best of our knowledge, there is no official benchmark on Indonesian sentence embeddings. Inspired by [Thai Sentence Vector Benchmark](https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark), we translated the [STS-B](https://github.com/facebookresearch/SentEval) dev and test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set. You can find the translated dataset on [🤗 HuggingFace Hub](https://huggingface.co/datasets/LazarusNLP/stsb_mt_id).
+Inspired by [Thai Sentence Vector Benchmark](https://github.com/mrpeerat/Thai-Sentence-Vector-Benchmark), we translated the [STS-B](https://github.com/facebookresearch/SentEval) dev and test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set. You can find the translated dataset on [🤗 HuggingFace Hub](https://huggingface.co/datasets/LazarusNLP/stsb_mt_id).
 
 For practical purposes, we used Sentence Transformer's [`EmbeddingSimilarityEvaluator`](https://www.sbert.net/docs/package_reference/evaluation.html#sentence_transformers.evaluation.EmbeddingSimilarityEvaluator) to perform inference and evaluate our models.
 
@@ -16,6 +16,26 @@ python sts/eval_sts.py \
     --test-text-column-1 text_1 \
     --test-text-column-2 text_2 \
     --test-label-column correlation \
+    --test-batch-size 32
+```
+
+## SemRel2024: Semantic Textual Relatedness (STR)
+
+SemRel2024 is a collection of Semantic Textual Relatedness (STR) datasets for 14 languages, including African and Asian languages. The datasets are composed of sentence pairs, each assigned a relatedness score between 0 (completely) unrelated and 1 (maximally related) with a large range of expected relatedness values. SemRel2024 dataset was used as part of the SemEval2024 shared task 1. The task aims to evaluate the ability of systems to measure the semantic relatedness between two sentences.
+
+We used Sentence Transformer's [`EmbeddingSimilarityEvaluator`](https://www.sbert.net/docs/package_reference/evaluation.html#sentence_transformers.evaluation.EmbeddingSimilarityEvaluator) to perform inference and evaluate our models.
+
+### Example
+
+```sh
+python sts/eval_sts.py \
+    --model-name LazarusNLP/congen-indobert-base \
+    --test-dataset-name SemRel/SemRel2024 \
+    --test-dataset-config ind \
+    --test-dataset-split test \
+    --test-text-column-1 sentence1 \
+    --test-text-column-2 sentence2 \
+    --test-label-column label \
     --test-batch-size 32
 ```
 

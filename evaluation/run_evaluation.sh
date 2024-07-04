@@ -76,6 +76,20 @@ python sts/eval_sts.py \
     --test-batch-size 32 \
     --output-folder sts/results/$model_name
 
+for split in dev test
+do
+    python sts/eval_sts.py \
+        --model-name $model \
+        --test-dataset-name SemRel/SemRel2024 \
+        --test-dataset-config ind \
+        --test-dataset-split $split \
+        --test-text-column-1 sentence1 \
+        --test-text-column-2 sentence2 \
+        --test-label-column label \
+        --test-batch-size 32 \
+        --output-folder sts/results/$model_name
+done
+
 ###############################
 # MTEB TASKS
 ###############################

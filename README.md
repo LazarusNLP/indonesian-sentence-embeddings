@@ -14,9 +14,11 @@ Inspired by [Thai Sentence Vector Benchmark](https://github.com/mrpeerat/Thai-Se
 
 ### Semantic Textual Similarity
 
-We believe that a synthetic baseline is better than no baseline. Therefore, we followed approached done in the Thai Sentence Vector Benchmark project and translated the [STS-B](https://github.com/facebookresearch/SentEval) dev and test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set.
+We followed approached done in the Thai Sentence Vector Benchmark project and translated the [STS-B](https://github.com/facebookresearch/SentEval) dev and test set to Indonesian via Google Translate API. This dataset will be used to evaluate our model's Spearman correlation score on the translated test set.
 
 > You can find the translated dataset on [🤗 HuggingFace Hub](https://huggingface.co/datasets/LazarusNLP/stsb_mt_id).
+
+Further, we will similarly be evaluating our models on the [SemRel2024](https://huggingface.co/datasets/SemRel/SemRel2024) dataset which contains human-annotated, Indonesian semantic textual relatedness (STR) data. The dataset consists of two splits: `dev` and `test`. We will be evaluating our models' Spearman correlation score on both splits.
 
 ### Retrieval
 
@@ -111,6 +113,30 @@ Like SimCSE, [ConGen: Unsupervised Control and Generalization Distillation For S
 | [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |            78.89             |
 | [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |            79.72             |
 | [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |            79.44             |
+
+#### SemRel2024: Semantic Textual Relatedness (STR)
+
+| Model                                                                                                                       | `dev` Spearman's Correlation (%) ↑ | `test` Spearman's Correlation (%) ↑ |
+| --------------------------------------------------------------------------------------------------------------------------- | :--------------------------------: | :---------------------------------: |
+| [SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/simcse-indobert-base)                                              |               30.64                |                36.77                |
+| [ConGen-IndoBERT Lite Base](https://huggingface.co/LazarusNLP/congen-indobert-lite-base)                                    |               35.95                |                41.73                |
+| [ConGen-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-indobert-base)                                              |               35.05                |                39.14                |
+| [ConGen-SimCSE-IndoBERT Base](https://huggingface.co/LazarusNLP/congen-simcse-indobert-base)                                |               33.71                |                37.73                |
+| [ConGen-Indo-e5 Small](https://huggingface.co/LazarusNLP/congen-indo-e5-small)                                              |               36.35                |                42.47                |
+| [SCT-IndoBERT Base](https://huggingface.co/LazarusNLP/sct-indobert-base)                                                    |               41.50                |                43.25                |
+| [all-IndoBERT Base](https://huggingface.co/LazarusNLP/all-indobert-base)                                                    |             **42.87**              |                38.78                |
+| [all-IndoBERT Base-v2](https://huggingface.co/LazarusNLP/all-indobert-base-v2)                                              |               41.68                |                40.42                |
+| [all-IndoBERT Base-v4](https://huggingface.co/LazarusNLP/all-indobert-base-v4)                                              |               41.38                |                38.05                |
+| [all-NusaBERT Base-v4](https://huggingface.co/LazarusNLP/all-nusabert-base-v4)                                              |               42.11                |                41.55                |
+| [all-NusaBERT Large-v4](https://huggingface.co/LazarusNLP/all-nusabert-large-v4)                                            |               40.21                |                42.25                |
+| [all-Indo-e5 Small-v2](https://huggingface.co/LazarusNLP/all-indo-e5-small-v2)                                              |               39.79                |                43.85                |
+| [all-Indo-e5 Small-v3](https://huggingface.co/LazarusNLP/all-indo-e5-small-v3)                                              |               40.25                |                42.60                |
+| [all-Indo-e5 Small-v4](https://huggingface.co/LazarusNLP/all-indo-e5-small-v4)                                              |               40.20                |                42.90                |
+| [distiluse-base-multilingual-cased-v2](https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2)   |               37.22                |                49.35                |
+| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) |               34.56                |                37.51                |
+| [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)                                              |               41.92                |              **49.60**              |
+| [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base)                                                |               41.29                |                45.04                |
+| [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large)                                              |               39.20                |                45.04                |
 
 ### Retrieval
 

@@ -11,6 +11,7 @@ from sentence_transformers.evaluation import EmbeddingSimilarityEvaluator
 class Args:
     model_name: str = "sentence-transformers/distiluse-base-multilingual-cased-v2"
     test_dataset_name: str = "LazarusNLP/stsb_mt_id"
+    test_dataset_config: str = "default"
     test_dataset_split: str = "test"
     test_text_column_1: str = "text_1"
     test_text_column_2: str = "text_2"
@@ -25,12 +26,13 @@ def main(args: Args):
     model = SentenceTransformer(args.model_name)
 
     # Load dataset
-    test_ds = load_dataset(args.test_dataset_name, split=args.test_dataset_split)
+    test_ds = load_dataset(args.test_dataset_name, args.test_dataset_config, split=args.test_dataset_split)
+    max_label_value = float(max(test_ds[args.test_label_column]))
 
     test_data = [
         InputExample(
             texts=[data[args.test_text_column_1], data[args.test_text_column_2]],
-            label=float(data[args.test_label_column]) / 5.0,
+            label=float(data[args.test_label_column]) / max_label_value,
         )
         for data in test_ds
     ]
