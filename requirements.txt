@@ -1,8 +1,9 @@
 git+https://github.com/w11wo/ConGen.git
 git+https://github.com/w11wo/SCT.git
 mteb==1.12.5
-sentence-transformers<3
+sentence-transformers
 datasets
 scikit-learn
 datargs
 nusacrowd
+seacrowd
