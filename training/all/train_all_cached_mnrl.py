@@ -43,7 +43,7 @@ class Args:
 def main(args: Args):
     # Load datasets
     raw_datasets = {
-        "indonli": IndoNLI,
+        "indonli": IndoNLITriplets,
         "indolem/indo_story_cloze": IndoStoryCloze,
         "unicamp-dl/mmarco": mMARCO,
         "miracl/miracl": MIRACL,
@@ -55,7 +55,7 @@ def main(args: Args):
         "SEACrowd/facqa": FacQA,
         "indonesian-nlp/lfqa_id": LFQAID,
         "jakartaresearch/indoqa": IndoQA,
-        "jakartaresearch/id-paraphrase-detection": ParaphraseDetection,
+        "jakartaresearch/id-paraphrase-detection": ParaphrasePairs,
         "wikimedia/wikipedia": Wikipedia,
         "lesserfield/brainly": Brainly,
         "esteler-ai/idn-news-az": IndonesianNews,
@@ -111,7 +111,7 @@ def main(args: Args):
         evaluator=evaluator,
     )
 
-    trainer.train()
+    trainer.train(resume_from_checkpoint=True)
 
     trainer.push_to_hub(dataset=list(raw_datasets.keys()))
 

@@ -89,10 +89,12 @@ class IndoQA:
         input_columns=["question", "answer"],
     )
     dataset = concatenate_datasets([dataset_1, dataset_2]).select_columns(["query", "positive"])
+    # some questions don't have answers
+    dataset = dataset.filter(lambda row: all(row[col] is not None for col in row))
 
 
 @dataclass
-class ParaphraseDetection:
+class ParaphrasePairs:
     dataset = load_dataset("jakartaresearch/id-paraphrase-detection", split="train", **kwargs)
     dataset = dataset.select_columns(["sentence1", "sentence2"])
 
@@ -101,6 +103,7 @@ class ParaphraseDetection:
 class Wikipedia:
     dataset = load_dataset("wikimedia/wikipedia", "20231101.id", split="train", **kwargs)
     dataset = dataset.select_columns(["text", "title"])
+    dataset = dataset.filter(lambda row: all(row[column].strip() != "" for column in row))
 
 
 @dataclass
@@ -108,6 +111,7 @@ class Brainly:
     dataset = load_dataset("lesserfield/brainly", split="train", **kwargs)
     dataset = dataset.filter(lambda status: status == "verified", input_columns=["status_1"])
     dataset = dataset.select_columns(["instruction", "answer_1"])
+    dataset = dataset.filter(lambda row: all(row[column].strip() != "" for column in row))
 
 
 @dataclass
@@ -213,8 +217,8 @@ class IndoStoryCloze:
 
 
 @dataclass
-class IndoNLI:
-    dataset = load_dataset("indonli", split="train", **kwargs)
+class IndoNLITriplets:
+    dataset = load_dataset("afaji/indonli", split="train", **kwargs)
 
     def __post_init__(self):
         columns = ["premise", "hypothesis", "contradiction"]

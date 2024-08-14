@@ -16,13 +16,19 @@ Inspired by [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-
 | [SEACrowd/facqa](https://huggingface.co/datasets/SEACrowd/facqa)                                                           | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           4,990           |
 | *included in v2*                                                                                                           |
 | [indonesian-nlp/lfqa_id](https://huggingface.co/datasets/indonesian-nlp/lfqa_id)                                           | Open-domain Question-Answering |             `(question, answer)`              |          226,147          |
-| [jakartaresearch/indoqa](https://huggingface.co/datasets/jakartaresearch/indoqa)                                           | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           6,498           |
+| [jakartaresearch/indoqa](https://huggingface.co/datasets/jakartaresearch/indoqa)                                           | Extractive Question-Answering  |  `(question, passage)`, `(question, answer)`  |           6,559           |
 | [jakartaresearch/id-paraphrase-detection](https://huggingface.co/datasets/jakartaresearch/id-paraphrase-detection)         |           Paraphrase           |       `(sentence, rephrased sentence)`        |           4,076           |
 | *included in v3*                                                                                                           |
 | [LazarusNLP/multilingual-NLI-26lang-2mil7-id](https://huggingface.co/datasets/LazarusNLP/multilingual-NLI-26lang-2mil7-id) |   Natural Language Inference   |      `(premise, entailment, hypothesis)`      |          41,924           |
 | *included in v4*                                                                                                           |
 | [nthakur/swim-ir-monolingual](https://huggingface.co/datasets/nthakur/swim-ir-monolingual)                                 |       Passage Retrieval        | `(query, positive passage, negative passage)` |          227,145          |
-| **Total**                                                                                                                  |                                |                                               |        **641,048**        |
+| *included in v5*                                                                                                           |
+| [wikimedia/wikipedia](https://huggingface.co/datasets/wikimedia/wikipedia)                                                 |       Passage Retrieval        |                `(title, text)`                |          665,621          |
+| [lesserfield/brainly](https://huggingface.co/datasets/lesserfield/brainly)                                                 | Open-domain Question-Answering |             `(question, answer)`              |          453,138          |
+| [esteler-ai/idn-news-az](https://huggingface.co/datasets/esteler-ai/idn-news-az)                                           |       Passage Retrieval        |                `(title, text)`                |         1,149,789         |
+| [hermanshid/doctor-id-qa](https://huggingface.co/datasets/hermanshid/doctor-id-qa)                                         | Open-domain Question-Answering |             `(question, answer)`              |           5,694           |
+| [SEACrowd/liputan6](https://huggingface.co/datasets/SEACrowd/liputan6)                                                     |   Document-Summary Retrieval   |             `(document, summary)`             |          193,883          |
+| **Total**                                                                                                                  |                                |                                               |       **3,109,234**       |
 
 ## All Supervised Datasets with MultipleNegativesRankingLoss
 
@@ -33,8 +39,7 @@ python train_all_mnrl.py \
     --model-name indobenchmark/indobert-base-p1 \
     --max-seq-length 128 \
     --num-epochs 5 \
-    --train-batch-size-pairs 384 \
-    --train-batch-size-triplets 256 \
+    --train-batch-size 256 \
     --learning-rate 2e-5
 ```
 
@@ -45,8 +50,7 @@ python train_all_mnrl.py \
     --model-name intfloat/multilingual-e5-small \
     --max-seq-length 128 \
     --num-epochs 5 \
-    --train-batch-size-pairs 384 \
-    --train-batch-size-triplets 256 \
+    --train-batch-size 256 \
     --learning-rate 2e-5
 ```
 
@@ -57,11 +61,10 @@ python train_all_mnrl.py \
 ```sh
 python train_all_cached_mnrl.py \
     --model-name indobenchmark/indobert-base-p1 \
-    --max-seq-length 128 \
-    --num-epochs 5 \
-    --train-batch-size-pairs 384 \
-    --train-batch-size-triplets 256 \
-    --mini-batch-size 320 \
+    --max-seq-length 512 \
+    --num-epochs 3 \
+    --train-batch-size 256 \
+    --mini-batch-size 64 \
     --learning-rate 2e-5
 ```
 
@@ -72,8 +75,7 @@ python train_all_cached_mnrl.py \
     --model-name LazarusNLP/NusaBERT-large \
     --max-seq-length 128 \
     --num-epochs 3 \
-    --train-batch-size-pairs 384 \
-    --train-batch-size-triplets 256 \
+    --train-batch-size 384 \
     --mini-batch-size 80 \
     --learning-rate 2e-5
 ```
